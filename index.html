@@ -83,6 +83,7 @@
   .fig svg { width: 100%; height: auto; display: block; }
   .fig text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
 
+  .mech-lede { color: var(--dim); font-size: 15.5px; max-width: 66ch; margin-bottom: 22px; }
   .facts { border-top: 1px solid var(--hair); display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 0 56px; }
   .facts div { display: flex; justify-content: space-between; gap: 24px; padding: 13px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
   .facts dt { color: var(--dim); }
@@ -106,6 +107,7 @@
       <a class="brand" href="#top">Cooper Lockridge</a>
       <nav>
         <a href="#work">Work</a>
+        <a href="#mechanical" class="hide-sm">Mechanical</a>
         <a href="#about" class="hide-sm">About</a>
         <a href="#how" class="hide-sm">How I work</a>
         <a href="#contact">Contact</a>
@@ -234,14 +236,28 @@
       </div>
     </section>
 
+    <section id="mechanical">
+      <h2>Mechanical</h2>
+      <p class="mech-lede">I'm a mechanical engineer by training: SolidWorks and AutoCAD, 3D printing, reverse
+      engineering, and coursework through machine dynamics, thermodynamics, heat transfer, and strength of
+      materials. That training shows up in my software.</p>
+      <div class="how">
+        <p><strong>The habits transfer.</strong> Unit checks, tolerance thinking, documented assumptions. A free-body diagram and a reconciliation harness are the same instinct: don't trust a result you haven't checked against the physics.</p>
+        <p><strong>I've been your user.</strong> For teams building software that touches the physical world — robotics, manufacturing, CAD and simulation tooling — I'm the engineer on the other side of your product, and I can translate.</p>
+        <p><strong>The proof is above.</strong> The SolidWorks project in my work list is the two sides meeting: AI agents driving real CAD through an MCP server I extended, generating VBA a machinist could read.</p>
+        <p><strong>Requirements are a spec.</strong> Engineering taught me to turn a vague ask into testable design inputs before building. That's the same job as writing a good ticket.</p>
+      </div>
+    </section>
+
     <section id="about">
       <h2>About</h2>
       <dl class="facts">
         <div><dt>Role</dt><dd>Software Engineer Intern, fintech</dd></div>
         <div><dt>Education</dt><dd>BS Mechanical Engineering, Kennesaw State, May 2027</dd></div>
         <div><dt>Location</dt><dd>Atlanta area — remote or on-site</dd></div>
-        <div><dt>Status</dt><dd class="ok">Open to full-time, 2027</dd></div>
-        <div><dt>Stack</dt><dd>TypeScript, Next.js, Supabase, Claude agents</dd></div>
+        <div><dt>Status</dt><dd class="ok">Open to full-time, 2027 — software or mechanical</dd></div>
+        <div><dt>Software</dt><dd>TypeScript, Next.js, Supabase, Claude agents</dd></div>
+        <div><dt>Mechanical</dt><dd>SolidWorks (VBA automation), AutoCAD, 3D printing</dd></div>
       </dl>
     </section>
 
