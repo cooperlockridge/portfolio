@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooper Lockridge</title>
+<meta name="description" content="Cooper Lockridge — I direct AI coding agents to ship production software, then audit the output adversarially.">
+<meta name="theme-color" content="#fbfbfd">
+<style>
+  :root {
+    --bg: #fbfbfd;
+    --bg-2: #f5f5f7;
+    --ink: #1d1d1f;
+    --dim: #6e6e73;
+    --hair: #d2d2d7;
+    --accent: #0066cc;
+    --ok: #1a7f4b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .up { animation: fadeUp 600ms cubic-bezier(0.25, 0.1, 0.25, 1) both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  }
+
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    background: rgba(251, 251, 253, 0.8);
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--hair);
+  }
+  .topbar .bar { max-width: 960px; margin: 0 auto; padding: 0 24px; height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .topbar .brand { font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+  .topbar .brand:hover { text-decoration: none; }
+  .topbar nav { display: flex; gap: 20px; align-items: center; }
+  .topbar nav a { font-size: 13px; color: var(--dim); transition: color 0.2s ease; }
+  .topbar nav a:hover { color: var(--ink); text-decoration: none; }
+  .topbar nav a.ext { color: var(--accent); }
+  @media (max-width: 540px) { .topbar nav a.hide-sm { display: none; } }
+
+  header { padding: 120px 0 0; text-align: center; }
+  .name { font-size: 13px; font-weight: 500; color: var(--dim); margin-bottom: 20px; }
+  h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0 auto 22px; max-width: 22ch; text-wrap: balance; }
+  .lede { color: var(--dim); margin: 0 auto 32px; max-width: 58ch; }
+  .lede strong { color: var(--ink); font-weight: 500; }
+  .cta { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .pill {
+    display: inline-block; background: var(--accent); color: #fff;
+    padding: 11px 24px; border-radius: 980px; font-size: 15px; font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .pill:hover { transform: scale(1.02); filter: brightness(1.1); text-decoration: none; }
+  .textlink { font-size: 15px; padding: 10px 22px; border: 1px solid var(--hair); border-radius: 980px; color: var(--ink); font-weight: 500; transition: all 0.2s ease; }
+  .textlink:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  .numbers { margin: 72px 0 0; padding: 28px 0 8px; border-top: 1px solid var(--hair); }
+  .numbers .caption { font-size: 13px; color: var(--dim); margin-bottom: 24px; }
+  .numgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 24px 24px; }
+  .num { text-align: center; } .num b { display: block; font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .num span { font-size: 13px; color: var(--dim); line-height: 1.4; display: block; margin-top: 4px; max-width: 20ch; margin-left: auto; margin-right: auto; }
+
+  section { padding: 96px 0 0; scroll-margin-top: 24px; max-width: 820px; margin: 0 auto; }
+  h2 { font-size: 13px; font-weight: 500; color: var(--dim); margin-bottom: 28px; }
+
+  .proj { padding: 28px 0; border-top: 1px solid var(--hair); }
+  .proj:last-child { border-bottom: 1px solid var(--hair); }
+  .proj h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+  .proj .meta { font-size: 13px; color: var(--dim); margin: 2px 0 10px; }
+  .proj .meta em { font-style: normal; color: var(--ok); font-weight: 500; }
+  .proj p { color: var(--dim); font-size: 15.5px; max-width: 66ch; }
+  .proj p strong { color: var(--ink); font-weight: 500; }
+  .fig { margin: 18px 0 4px; max-width: 780px; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+  .facts { border-top: 1px solid var(--hair); display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 0 56px; }
+  .facts div { display: flex; justify-content: space-between; gap: 24px; padding: 13px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
+  .facts dt { color: var(--dim); }
+  .facts dd { text-align: right; }
+  .facts dd.ok { color: var(--ok); font-weight: 500; }
+
+  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0 56px; border-bottom: 1px solid var(--hair); }
+  .how p { font-size: 15.5px; color: var(--dim); padding: 14px 0; border-top: 1px solid var(--hair); }
+  .how strong { color: var(--ink); font-weight: 500; }
+
+  .contact { padding: 110px 0 120px; text-align: center; }
+  .contact h2 { margin-bottom: 14px; }
+  .contact .big { font-size: clamp(26px, 4.5vw, 36px); font-weight: 600; letter-spacing: -0.015em; margin-bottom: 14px; }
+  .contact .note { color: var(--dim); margin: 0 auto 30px; max-width: 44ch; }
+  .contact .links { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="bar">
+      <a class="brand" href="#top">Cooper Lockridge</a>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#how" class="hide-sm">How I work</a>
+        <a href="#contact">Contact</a>
+        <a class="ext" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
+        <a class="ext" href="resume.pdf" download>Resume</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap" id="top">
+    <header>
+      <h1 class="up">I build software with AI agents, then prove it right.</h1>
+      <p class="lede up" style="animation-delay:120ms">
+        Software engineer intern at a fintech company; mechanical engineering senior at Kennesaw State.
+        I direct AI coding agents to ship production software and <strong>audit everything they produce</strong>.
+        Atlanta area; happy remote or on-site.
+      </p>
+      <div class="cta up" style="animation-delay:160ms">
+        <a class="pill" href="mailto:Cooperlockridge@gmail.com">Get in touch</a>
+        <a class="textlink" href="resume.pdf" download>Resume</a>
+        <a class="textlink" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
+      </div>
+
+      <div class="numbers up" style="animation-delay:220ms">
+        <p class="caption">Numbers I can prove, from production systems:</p>
+        <div class="numgrid">
+          <div class="num"><b>467</b><span>merged PRs, counted live from GitHub</span></div>
+          <div class="num"><b>2,925</b><span>tests, from zero in six weeks</span></div>
+          <div class="num"><b>46</b><span>tools on an MCP server I built</span></div>
+          <div class="num"><b>~3 min</b><span>PR approval to production</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="work">
+      <h2>Work</h2>
+
+      <div class="proj">
+        <h3>Software Factory</h3>
+        <p class="meta"><em>In production.</em> Claude agents, Node, GitHub</p>
+        <p>Any employee clicks Feedback; an agent reproduces the bug, fixes it, and opens a pull request.
+        A human decides what ships. First six reports: <strong>five merged PRs, four the same day</strong>.</p>
+        <div class="fig" aria-label="Pipeline: feedback, reproduce, fix and test, human review, production">
+          <svg viewBox="0 0 640 92" role="img">
+            <g fill="none" stroke="#d2d2d7">
+              <rect x="1" y="8" width="110" height="40" rx="10"/>
+              <rect x="133" y="8" width="110" height="40" rx="10"/>
+              <rect x="265" y="8" width="110" height="40" rx="10"/>
+              <rect x="397" y="8" width="110" height="40" rx="10"/>
+              <rect x="529" y="8" width="110" height="40" rx="10"/>
+            </g>
+            <g fill="#6e6e73" font-size="13" text-anchor="middle">
+              <text x="56" y="33">feedback</text>
+              <text x="188" y="33">reproduce</text>
+              <text x="320" y="33">fix + test</text>
+              <text x="452" y="33">human review</text>
+              <text x="584" y="33" fill="#1a7f4b">production</text>
+              <text x="122" y="32">→</text>
+              <text x="254" y="32">→</text>
+              <text x="386" y="32">→</text>
+              <text x="518" y="32">→</text>
+            </g>
+            <text x="188" y="72" fill="#6e6e73" font-size="12" text-anchor="middle">no reproduction → no fix</text>
+            <line x1="188" y1="52" x2="188" y2="58" stroke="#d2d2d7"/>
+          </svg>
+        </div>
+        <p>Bug reports are untrusted text, so the pipeline is hardened against prompt injection and fails closed.</p>
+      </div>
+
+      <div class="proj">
+        <h3>Siege</h3>
+        <p class="meta">Claude skill, multi-agent pipeline</p>
+        <p>A skill that turns review into a gauntlet — 41 agents, three adversarial passes, two fixers.
+        <strong>Nothing ships on one model's opinion.</strong></p>
+        <div class="fig" aria-label="Pipeline: 20 agents sweep, 8 verify, fixer, 4 adversarial review, 8 verify, fixer, ship">
+          <svg viewBox="0 0 640 56" role="img">
+            <g fill="none" stroke="#d2d2d7">
+              <rect x="1" y="12" width="86" height="30" rx="15"/>
+              <rect x="107" y="12" width="74" height="30" rx="15"/>
+              <rect x="201" y="12" width="52" height="30" rx="15"/>
+              <rect x="273" y="12" width="104" height="30" rx="15"/>
+              <rect x="397" y="12" width="74" height="30" rx="15"/>
+              <rect x="491" y="12" width="52" height="30" rx="15"/>
+              <rect x="563" y="12" width="76" height="30" rx="15"/>
+            </g>
+            <g font-size="12.5" text-anchor="middle">
+              <text x="44" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">20</tspan> sweep</text>
+              <text x="144" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">8</tspan> verify</text>
+              <text x="227" y="31" fill="#6e6e73">fixer</text>
+              <text x="325" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">4</tspan> adversarial</text>
+              <text x="434" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">8</tspan> verify</text>
+              <text x="517" y="31" fill="#6e6e73">fixer</text>
+              <text x="601" y="31" fill="#1a7f4b">✓ ship</text>
+              <g fill="#a1a1a6">
+                <text x="97" y="31">→</text>
+                <text x="191" y="31">→</text>
+                <text x="263" y="31">→</text>
+                <text x="387" y="31">→</text>
+                <text x="481" y="31">→</text>
+                <text x="553" y="31">→</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="proj">
+        <h3>Restaurant Time Clock &amp; Payroll</h3>
+        <p class="meta"><em>Real paying client.</em> Next.js, TypeScript, Supabase</p>
+        <p>A barbecue restaurant runs payroll on this: PIN-entry terminal, overtime rules, and Excel exports
+        that match the payroll processor's template byte for byte. <strong>226 tests</strong>, and one invariant I'm fond of:
+        the export file exists if and only if an approved pay period does.</p>
+      </div>
+
+      <div class="proj">
+        <h3>Personal Finance Dashboard</h3>
+        <p class="meta">React, TypeScript, Vite</p>
+        <p>A weekly paycheck allocator built for one real user. The domain model strictly separates pre-tax
+        and post-tax dollars, so tax math and budget math can never contaminate each other.</p>
+      </div>
+
+      <div class="proj">
+        <h3>SolidWorks, driven by AI</h3>
+        <p class="meta">Open source, MCP, VBA</p>
+        <p>Extended an open-source MCP server so Claude can drive my CAD — modeling, drawings, batch export.
+        I'm an ME student; my homework tooling writes VBA macros for me.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Software Engineer Intern, fintech</dd></div>
+        <div><dt>Education</dt><dd>BS Mechanical Engineering, Kennesaw State, May 2027</dd></div>
+        <div><dt>Location</dt><dd>Atlanta area — remote or on-site</dd></div>
+        <div><dt>Status</dt><dd class="ok">Open to full-time, 2027</dd></div>
+        <div><dt>Stack</dt><dd>TypeScript, Next.js, Supabase, Claude agents</dd></div>
+      </dl>
+    </section>
+
+    <section id="how">
+      <h2>How I work</h2>
+      <div class="how">
+        <p><strong>Start with a premortem.</strong> Assume the plan already failed; find out why before committing.</p>
+        <p><strong>Verify at the seam.</strong> Two correct components can still be wrong where they meet. Call the deployed thing on real data.</p>
+        <p><strong>A green test suite is not evidence.</strong> An audit once found 11 real bugs behind 2,673 passing tests. Break the code, watch the test go red, restore it.</p>
+        <p><strong>Reproduce before shipping a hypothesis.</strong> Four wrong diagnostic PRs taught me this one. My bug-fix agent carries it as a hard gate.</p>
+        <p><strong>Make wrong answers loud.</strong> A system that can't be correct yet should warn, never guess.</p>
+        <p><strong>Write down what cost you a day.</strong> The same day is never lost twice.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <p class="big">Tell me what you're building.</p>
+      <p class="note">Email is the fastest path. Say what "done" looks like and I'll respond with something useful.</p>
+      <div class="links">
+        <a class="pill" href="mailto:Cooperlockridge@gmail.com">Cooperlockridge@gmail.com</a>
+        <a class="textlink" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
+        <a class="textlink" href="resume.pdf" download>Resume</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
