@@ -1,0 +1,205 @@
+{
+  "name": "Cooper Lockridge",
+  "headline": "Software engineer intern and mechanical engineering student who builds software with AI agents, then verifies it.",
+  "location": "Atlanta area",
+  "currentRole": {
+    "title": "Software Engineer Intern",
+    "organization": "Northstar Mortgage Advisors",
+    "since": "2025-04",
+    "arrangement": "Remote/Hybrid"
+  },
+  "education": {
+    "degree": "BS Mechanical Engineering",
+    "institution": "Kennesaw State University",
+    "expected": "2027-05"
+  },
+  "availability": {
+    "status": "Open to full-time roles starting 2027",
+    "start": "2027",
+    "roleTypes": [
+      "software",
+      "mechanical"
+    ],
+    "workArrangement": "Remote or on-site",
+    "location": "Atlanta area"
+  },
+  "contact": {
+    "email": "Cooperlockridge@gmail.com"
+  },
+  "links": {
+    "website": "https://cooperlockridge.com",
+    "github": "https://github.com/cooperlockridge",
+    "linkedin": "https://www.linkedin.com/in/cooperlockridge",
+    "resumePdf": "https://cooperlockridge.com/resume.pdf",
+    "cadPortfolioPdf": "https://cooperlockridge.com/cad-portfolio.pdf"
+  },
+  "keyNumbers": [
+    {
+      "value": "467",
+      "label": "merged PRs, counted from GitHub"
+    },
+    {
+      "value": "2,925",
+      "label": "tests, from zero in six weeks"
+    },
+    {
+      "value": "46",
+      "label": "tools on an MCP server he built"
+    },
+    {
+      "value": "~3 min",
+      "label": "PR approval to production"
+    }
+  ],
+  "projects": [
+    {
+      "id": "software-factory",
+      "name": "Software Factory",
+      "oneLine": "Any employee clicks Feedback; an agent reproduces the bug, fixes it, and opens a pull request. A human decides what ships.",
+      "stack": [
+        "Claude agents",
+        "Node",
+        "GitHub"
+      ],
+      "status": "In production"
+    },
+    {
+      "id": "siege",
+      "name": "Siege",
+      "oneLine": "A Claude skill that turns code review into a multi-agent gauntlet: 41 agents, three adversarial passes, two fixers.",
+      "stack": [
+        "Claude skill",
+        "Multi-agent pipeline"
+      ],
+      "status": "Built"
+    },
+    {
+      "id": "restaurant-time-clock-payroll",
+      "name": "Restaurant Time Clock & Payroll",
+      "oneLine": "Co-built and deployed a time-clock and payroll product a barbecue restaurant (real paying client) runs payroll on.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Vitest"
+      ],
+      "status": "In production for a paying client"
+    },
+    {
+      "id": "personal-finance-dashboard",
+      "name": "Personal Finance Dashboard",
+      "oneLine": "A weekly paycheck allocator built for one real user, splitting take-home pay into editable budget envelopes.",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "status": "Built for one real user"
+    },
+    {
+      "id": "solidworks-ai",
+      "name": "SolidWorks, driven by AI",
+      "oneLine": "Extended an open-source MCP server so Claude can drive SolidWorks: modeling, drawings, batch export.",
+      "stack": [
+        "Open-source MCP server",
+        "SolidWorks",
+        "VBA"
+      ],
+      "status": "In use for his own CAD work"
+    }
+  ],
+  "skills": {
+    "Web": [
+      "Next.js 15/16",
+      "React 19",
+      "TypeScript (strict)",
+      "Tailwind CSS",
+      "Node.js",
+      "Bun"
+    ],
+    "Platform": [
+      "Supabase/PostgreSQL (RLS, migrations)",
+      "Clerk (OAuth, multi-tenant orgs)",
+      "Vercel",
+      "GitHub Actions",
+      "BigQuery",
+      "REST/JSON:API"
+    ],
+    "AI tooling": [
+      "Claude Code and agent orchestration",
+      "MCP servers and clients",
+      "Adversarial AI code review",
+      "Prompt-injection hardening"
+    ],
+    "Mechanical": [
+      "SolidWorks (VBA automation)",
+      "AutoCAD",
+      "3D printing",
+      "Reverse engineering"
+    ],
+    "Mechanical coursework": [
+      "Machine dynamics",
+      "Thermodynamics",
+      "Heat transfer",
+      "Strength of materials"
+    ]
+  },
+  "howIWork": [
+    "Start with a premortem. Assume the plan already failed; find out why before committing.",
+    "Verify at the seam. Two correct components can still be wrong where they meet. Call the deployed thing on real data.",
+    "A green test suite is not evidence. An audit once found 11 real bugs behind 2,673 passing tests. Break the code, watch the test go red, restore it.",
+    "Reproduce before shipping a hypothesis. Four wrong diagnostic PRs taught this one. The bug-fix agent carries it as a hard gate.",
+    "Make wrong answers loud. A system that can't be correct yet should warn, never guess.",
+    "Write down what cost you a day. The same day is never lost twice."
+  ],
+  "machineEndpoints": [
+    {
+      "url": "https://cooperlockridge.com/",
+      "type": "text/html",
+      "description": "Portfolio page (HTML)"
+    },
+    {
+      "url": "https://cooperlockridge.com/index.md",
+      "type": "text/markdown",
+      "description": "Full page as Markdown"
+    },
+    {
+      "url": "https://cooperlockridge.com/llms.txt",
+      "type": "text/plain",
+      "description": "llms.txt index"
+    },
+    {
+      "url": "https://cooperlockridge.com/resume.json",
+      "type": "application/json",
+      "description": "JSON Resume 1.0.0"
+    },
+    {
+      "url": "https://cooperlockridge.com/profile.json",
+      "type": "application/json",
+      "description": "Compact profile summary"
+    },
+    {
+      "url": "https://cooperlockridge.com/resume.pdf",
+      "type": "application/pdf",
+      "description": "Resume"
+    },
+    {
+      "url": "https://cooperlockridge.com/cad-portfolio.pdf",
+      "type": "application/pdf",
+      "description": "CAD and simulation portfolio"
+    },
+    {
+      "url": "https://cooperlockridge.com/api/mcp",
+      "type": "mcp/streamable-http",
+      "description": "Remote MCP server: read-only tools, no auth, stateless"
+    },
+    {
+      "url": "https://cooperlockridge.com/.well-known/mcp/server-card.json",
+      "type": "application/json",
+      "description": "MCP server card (pre-standard)"
+    }
+  ],
+  "lastUpdated": "2026-09-23",
+  "canonicalUrl": "https://cooperlockridge.com/profile.json"
+}

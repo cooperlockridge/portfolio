@@ -2,289 +2,1210 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cooper Lockridge</title>
-<meta name="description" content="Cooper Lockridge — I direct AI coding agents to ship production software, then audit the output adversarially.">
-<meta name="theme-color" content="#fbfbfd">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooper Lockridge — Software engineer who builds with AI agents</title>
+<meta name="description" content="Cooper Lockridge: software engineer intern at a fintech company and mechanical engineering senior at Kennesaw State. I build software with AI agents, then prove it right. Atlanta area.">
+<link rel="canonical" href="https://cooperlockridge.com/">
+<meta name="author" content="Cooper Lockridge">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Cooper Lockridge">
+<meta property="og:title" content="Cooper Lockridge — I build software with AI agents, then prove it right.">
+<meta property="og:description" content="Software engineer intern (fintech) and ME senior at Kennesaw State. 467 merged PRs, 2,925 tests, a 46-tool MCP server, ~3 min from approval to production.">
+<meta property="og:url" content="https://cooperlockridge.com/">
+<meta property="og:image" content="https://cooperlockridge.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cooper Lockridge — I build software with AI agents, then prove it right.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cooper Lockridge — I build software with AI agents, then prove it right.">
+<meta name="twitter:description" content="Software engineer intern (fintech) and ME senior at Kennesaw State. Atlanta area.">
+<meta name="twitter:image" content="https://cooperlockridge.com/og.png">
+<meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version">
+<link rel="alternate" type="application/json" href="/profile.json" title="Structured profile">
+<link rel="help" type="text/plain" href="/llms.txt">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://cooperlockridge.com/#profilepage",
+  "url": "https://cooperlockridge.com/",
+  "name": "Cooper Lockridge",
+  "dateModified": "2026-09-23",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://cooperlockridge.com/#person",
+    "name": "Cooper Lockridge",
+    "jobTitle": "Software Engineer Intern",
+    "worksFor": { "@type": "Organization", "name": "Northstar Mortgage Advisors" },
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Kennesaw State University" },
+    "homeLocation": { "@type": "Place", "name": "Atlanta area" },
+    "workLocation": { "@type": "Place", "name": "Atlanta area; remote or on-site" },
+    "email": "mailto:Cooperlockridge@gmail.com",
+    "url": "https://cooperlockridge.com/",
+    "sameAs": [
+      "https://github.com/cooperlockridge",
+      "https://www.linkedin.com/in/cooperlockridge"
+    ],
+    "knowsAbout": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "Model Context Protocol",
+      "AI agent orchestration",
+      "Prompt-injection hardening",
+      "SolidWorks",
+      "AutoCAD",
+      "3D printing",
+      "Mechanical engineering"
+    ],
+    "subjectOf": [
+      { "@type": "DigitalDocument", "name": "Resume", "url": "https://cooperlockridge.com/resume.pdf", "encodingFormat": "application/pdf" },
+      { "@type": "DigitalDocument", "name": "CAD & simulation portfolio", "url": "https://cooperlockridge.com/cad-portfolio.pdf", "encodingFormat": "application/pdf" },
+      { "@type": "DigitalDocument", "name": "Resume (JSON Resume 1.0.0)", "url": "https://cooperlockridge.com/resume.json", "encodingFormat": "application/json" }
+    ]
+  }
+}
+</script>
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t); } catch (e) {}
+  })();
+</script>
 <style>
   :root {
-    --bg: #fbfbfd;
-    --bg-2: #f5f5f7;
-    --ink: #1d1d1f;
-    --dim: #6e6e73;
-    --hair: #d2d2d7;
-    --accent: #0066cc;
-    --ok: #1a7f4b;
+    --bg: #0a0a0b; --surface: #111113; --surface-2: #18181b;
+    --border: #ffffff14; --border-strong: #ffffff29; --line: #ffffff33;
+    --text: #ededed; --muted: #a1a1aa;
+    --accent: #3ee08f; --accent-ink: #3ee08f; --on-accent: #0a0a0b;
+    --accent-2: #5ec8ff; --warn: #f5a524; --warn-ink: #f5a524;
+    --dot: #ffffff1c; --glass: #0a0a0bcc;
+    --bp-bg: #08131d; --bp-ink: #5ec8ff;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --ease: cubic-bezier(.65, 0, .35, 1);
+    color-scheme: dark;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #fafaf9; --surface: #ffffff; --surface-2: #f4f4f5;
+      --border: #0000001a; --border-strong: #0000002e; --line: #00000038;
+      --text: #0a0a0b; --muted: #52525b;
+      --accent: #0f9f5c; --accent-ink: #0a7a45; --on-accent: #0a0a0b;
+      --accent-2: #0a6fb8; --warn: #b26b00; --warn-ink: #9a5c00;
+      --dot: #00000017; --glass: #fafaf9cc;
+      --bp-bg: #f0f7fc; --bp-ink: #0a6fb8;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #fafaf9; --surface: #ffffff; --surface-2: #f4f4f5;
+    --border: #0000001a; --border-strong: #0000002e; --line: #00000038;
+    --text: #0a0a0b; --muted: #52525b;
+    --accent: #0f9f5c; --accent-ink: #0a7a45; --on-accent: #0a0a0b;
+    --accent-2: #0a6fb8; --warn: #b26b00; --warn-ink: #9a5c00;
+    --dot: #00000017; --glass: #fafaf9cc;
+    --bp-bg: #f0f7fc; --bp-ink: #0a6fb8;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body {
-    background: var(--bg); color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 17px; line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  a { color: inherit; text-decoration-color: var(--border-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--accent); }
+  ::selection { background: color-mix(in oklab, var(--accent) 35%, transparent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  svg { display: block; }
+  .mono { font-family: var(--mono); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 640px) { .wrap { padding: 0 24px; } }
+  @media (min-width: 1024px) { .wrap { padding: 0 32px; } }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: 16px; top: -48px; z-index: 50; background: var(--accent); color: var(--on-accent); padding: 8px 12px; border-radius: 8px; font: 500 13px var(--mono); }
+  .skip:focus { top: 12px; }
+  html:not(.js) .js-only { display: none !important; }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .up { animation: fadeUp 600ms cubic-bezier(0.25, 0.1, 0.25, 1) both; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  /* ---------- top bar ---------- */
+  .topbar { position: sticky; top: 0; z-index: 20; background: var(--glass); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); border-bottom: 1px solid var(--border); }
+  .topbar .wrap { height: 56px; display: flex; align-items: center; gap: 16px; }
+  .wordmark { font: 500 13px var(--mono); text-decoration: none; color: var(--text); white-space: nowrap; }
+  .wordmark b { color: var(--accent-ink); font-weight: 500; }
+  .wordmark .cursor { display: inline-block; width: 7px; height: 14px; margin-left: 3px; vertical-align: -2px; background: var(--accent); }
+  @media (prefers-reduced-motion: no-preference) { .wordmark .cursor { animation: blink 1.1s steps(1) infinite; } }
+  @keyframes blink { 50% { opacity: 0; } }
+  .topnav { display: none; gap: 2px; margin-left: 8px; }
+  .topnav a { font-size: 13.5px; color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: 8px; }
+  .topnav a:hover { color: var(--text); background: var(--surface-2); }
+  .bar-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .status { display: none; align-items: center; gap: 8px; font: 12px var(--mono); color: var(--muted); padding: 5px 10px; border: 1px solid var(--border); border-radius: 999px; white-space: nowrap; }
+  .status i, .live i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent); display: inline-block; }
+  .iconbtn { height: 34px; min-width: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 0 9px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); border-radius: 8px; font: 12px var(--mono); cursor: pointer; }
+  .iconbtn:hover { color: var(--text); border-color: var(--border-strong); }
+  .iconbtn svg { width: 15px; height: 15px; }
+  kbd { font: 11px var(--mono); padding: 1px 5px; border: 1px solid var(--border-strong); border-bottom-width: 2px; border-radius: 5px; color: var(--text); background: var(--surface-2); }
+  .k-desk { display: none; }
+  @media (min-width: 860px) { .topnav { display: flex; } .k-desk { display: inline; } .k-mob { display: none; } }
+  @media (min-width: 1060px) { .status { display: inline-flex; } }
+  .theme-dark-icon { display: none; }
+  :root[data-theme="light"] .theme-dark-icon { display: block; } :root[data-theme="light"] .theme-light-icon { display: none; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .theme-dark-icon { display: block; } :root:not([data-theme="dark"]) .theme-light-icon { display: none; } }
+
+  /* ---------- type ---------- */
+  .kicker { font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+  .kicker::before { content: ""; width: 6px; height: 6px; background: var(--accent); border-radius: 1px; }
+  .kicker.plain::before { display: none; }
+  h2 { font-size: clamp(1.75rem, 3.6vw, 2.5rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin: 14px 0 0; text-wrap: balance; }
+  .sec-lede { color: var(--muted); max-width: 62ch; margin-top: 14px; }
+  section.sec { padding: 104px 0 0; scroll-margin-top: 64px; }
+  @media (max-width: 640px) { section.sec { padding-top: 80px; } }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; padding: 72px 0 0; scroll-margin-top: 64px; }
+  .hero::before { content: ""; position: absolute; inset: 0 0 -40px; z-index: -1; background-image: radial-gradient(var(--dot) 1px, transparent 1.2px); background-size: 22px 22px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 68% 38%, #000 10%, transparent 72%); mask-image: radial-gradient(ellipse 70% 60% at 68% 38%, #000 10%, transparent 72%); pointer-events: none; }
+  .hero-grid { display: grid; gap: 40px; align-items: center; }
+  @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.08fr .92fr; gap: 48px; } .hero { padding-top: 96px; } }
+  h1 { font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; }
+  .h1-name { display: block; font: 500 14px var(--mono); letter-spacing: 0; color: var(--muted); margin-bottom: 18px; }
+  .h1-value { display: block; font-size: clamp(2.5rem, 6vw, 4.5rem); text-wrap: balance; }
+  @media (min-width: 960px) { .h1-value { font-size: clamp(2.75rem, 4.9vw, 4.5rem); } }
+  .h1-value em { font-style: normal; color: var(--accent-ink); }
+  .lede { color: var(--muted); font-size: 17px; max-width: 56ch; margin-top: 22px; }
+  .lede strong { color: var(--text); font-weight: 500; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 10px; font-size: 14.5px; font-weight: 500; text-decoration: none; border: 1px solid var(--border-strong); color: var(--text); background: var(--surface); transition: border-color .2s, background-color .2s, transform .2s; }
+  .btn:hover { border-color: var(--muted); background: var(--surface-2); }
+  .btn.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; }
+  .btn.primary:hover { background: color-mix(in oklab, var(--accent) 88%, var(--text)); }
+  .btn svg { width: 15px; height: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 26px; font: 12.5px var(--mono); color: var(--muted); align-items: center; }
+  .tags .sep { opacity: .5; }
+  .live { display: inline-flex; align-items: center; gap: 8px; }
+  .hero-fig { position: relative; }
+  .hero-fig svg { width: 100%; height: auto; max-width: 520px; margin: 0 auto; }
+  .figcap { font: 11.5px var(--mono); color: var(--muted); margin-top: 10px; text-align: center; }
+  .numbers { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 64px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); overflow: hidden; }
+  .numbers li { padding: 20px 18px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .numbers li:nth-child(2n) { border-right: 0; }
+  .numbers li:nth-child(n+3) { border-bottom: 0; }
+  @media (min-width: 760px) { .numbers { grid-template-columns: repeat(4, 1fr); } .numbers li { border-bottom: 0; border-right: 1px solid var(--border) !important; } .numbers li:last-child { border-right: 0 !important; } }
+  .numbers .n { display: block; font: 500 clamp(1.6rem, 3vw, 2.1rem) var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; line-height: 1.1; }
+  .numbers .l { display: block; font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+  .numbers-cap { font: 11.5px var(--mono); color: var(--muted); margin-top: 12px; letter-spacing: .02em; }
+
+  /* ---------- cards ---------- */
+  .card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; isolation: isolate; scroll-margin-top: 80px; }
+  .card::before { content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
+    background: radial-gradient(260px circle at var(--x, 50%) var(--y, 0%), color-mix(in oklab, var(--accent) 70%, transparent), transparent 70%), linear-gradient(to bottom, var(--border-strong), transparent 60%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    opacity: .35; transition: opacity .3s; }
+  .card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; background: radial-gradient(420px circle at var(--x, 50%) var(--y, 0%), color-mix(in oklab, var(--accent) 7%, transparent), transparent 60%); opacity: 0; transition: opacity .3s; }
+  .card:hover::before, .card:focus-within::before, .card:focus::before { opacity: 1; }
+  .card:hover::after { opacity: 1; }
+
+  /* ---------- work ---------- */
+  .bento { display: grid; gap: 16px; margin-top: 40px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) {
+    .bento { grid-template-columns: repeat(12, 1fr); }
+    .proj { grid-column: span 6; }
+    #software-factory { grid-column: 1 / -1; display: grid; grid-template-columns: 5fr 7fr; column-gap: 40px; align-items: start; }
+    #software-factory > .fig { grid-column: 2; grid-row: 1 / span 4; margin: 0; border-top: 0; padding-top: 28px; }
+    #software-factory > :not(.fig) { grid-column: 1; }
   }
+  #siege .fig svg { max-height: 340px; }
+  .proj { display: flex; flex-direction: column; min-width: 0; }
+  .proj:focus { outline: none; }
+  .proj:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .proj-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .badge { font: 500 11.5px var(--mono); color: var(--accent-ink); display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .proj h3 { font-size: 1.375rem; font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; margin-top: 14px; }
+  #software-factory h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chips li { font: 11.5px var(--mono); color: var(--muted); padding: 2px 9px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-2); }
+  .proj p { color: var(--muted); margin-top: 12px; font-size: 15.5px; max-width: 64ch; }
+  .proj p strong { color: var(--text); font-weight: 500; }
+  .fig { margin-top: 20px; border-top: 1px dashed var(--border); padding-top: 18px; }
+  .proj .fig:last-child { margin-top: auto; }
+  .proj .body + .fig { margin-top: 20px; }
+  .fig svg { width: 100%; height: auto; }
+  .fig text, .bp text, .hero-fig text { font-family: var(--mono); }
+  .stages { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 14px; font: 11.5px var(--mono); color: var(--muted); }
+  .stages li { display: inline-flex; align-items: center; gap: 6px; }
+  .stages li + li::before { content: "→"; opacity: .55; }
+  .stages b { color: var(--text); font-weight: 500; }
+  .stages .ok { color: var(--accent-ink); }
 
-  .topbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
-    background: rgba(251, 251, 253, 0.8);
-    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--hair);
+  /* svg paint classes */
+  .t { fill: var(--muted); } .t-hi { fill: var(--text); } .t-ac { fill: var(--accent-ink); } .t-wn { fill: var(--warn-ink); } .t-cy { fill: var(--accent-2); }
+  .ln { fill: none; stroke: var(--line); } .ln-s { fill: none; stroke: var(--border-strong); }
+  .box { fill: var(--surface-2); stroke: var(--line); } .box-bg { fill: var(--surface); stroke: var(--line); }
+  .ac { stroke: var(--accent); } .ac-f { fill: var(--accent); } .cy { stroke: var(--accent-2); } .cy-f { fill: var(--accent-2); } .wn { stroke: var(--warn); } .wn-f { fill: var(--warn); }
+  .txt-f { fill: var(--text); } .mut-f { fill: var(--muted); } .bg-f { fill: var(--bg); } .sf-f { fill: var(--surface); }
+  .nof { fill: none; }
+
+  /* ---------- animation ---------- */
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes flow { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes pulse { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.8); opacity: 0; } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes growY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes fadeout { to { opacity: 0; } }
+  .js .draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .js .in-view .draw { animation: draw var(--dur, 1.1s) var(--ease) var(--d, 0s) forwards; }
+  .js .fade { opacity: 0; }
+  .js .in-view .fade { animation: fade .6s ease var(--d, 0s) forwards; }
+  .js .grow { transform: scaleX(0); transform-box: fill-box; transform-origin: 0 50%; }
+  .js .in-view .grow { animation: grow .7s cubic-bezier(.2, .7, .2, 1) var(--d, 0s) forwards; }
+  .pkt { fill: none; stroke-dasharray: .045 .955; stroke-dashoffset: 1; stroke-linecap: round; animation: flow var(--dur, 2.6s) linear var(--d, 0s) infinite; }
+  .pulse { opacity: 0; transform-box: fill-box; transform-origin: center; animation: pulse 2.8s ease-out infinite; }
+  .js .loop { animation-play-state: paused; }
+  .js .playing .loop { animation-play-state: running; }
+  .sweep { transform-box: view-box; transform-origin: 200px 150px; }
+  .js .sweep { opacity: 0; }
+  .js .in-view .sweep { opacity: 1; animation: spin 1.3s linear .2s 3 both, fadeout .5s ease 4.1s forwards; }
+  .hand { transform-box: view-box; transform-origin: 74px 96px; }
+  .js .in-view .hand { animation: spin 2.4s cubic-bezier(.4, 0, .2, 1) both; }
+
+  /* ---------- mechanical ---------- */
+  .bp { margin-top: 40px; border-radius: 16px; overflow: hidden; border: 1px solid color-mix(in oklab, var(--bp-ink) 35%, transparent); background: var(--bp-bg); color: var(--bp-ink); }
+  .bp-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 10px 16px; font: 11.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; border-bottom: 1px solid color-mix(in oklab, var(--bp-ink) 25%, transparent); }
+  .bp-scroll { overflow-x: auto; }
+  .bp svg { width: 100%; min-width: 640px; height: auto; }
+  .bp .s { fill: none; stroke: var(--bp-ink); }
+  .bp .f { fill: var(--bp-ink); }
+  .bp text { fill: var(--bp-ink); font-size: 10.5px; }
+  .bp .hid { stroke-dasharray: 5 3; }
+  .bp .ctr { stroke-dasharray: 16 3 3 3; opacity: .75; }
+  .bp .thin { stroke-width: .7; }
+  .bp .obj { stroke-width: 1.7; }
+  .mech-grid { display: grid; gap: 0 48px; margin-top: 32px; }
+  @media (min-width: 760px) { .mech-grid { grid-template-columns: 1fr 1fr; } }
+  .mech-grid p { color: var(--muted); padding: 16px 0; border-top: 1px solid var(--border); font-size: 15.5px; }
+  .mech-grid strong { color: var(--text); font-weight: 500; }
+  .pdf-link { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 16px; padding: 16px 18px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--muted); font-size: 15px; }
+
+  /* ---------- about ---------- */
+  .spec { margin-top: 32px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); overflow: hidden; }
+  .spec-head { display: flex; justify-content: space-between; padding: 10px 18px; font: 11.5px var(--mono); color: var(--muted); border-bottom: 1px solid var(--border); background: var(--surface-2); }
+  .spec dl > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+  .spec dl > div:last-child { border-bottom: 0; }
+  @media (min-width: 640px) { .spec dl > div { grid-template-columns: 180px 1fr; gap: 24px; } }
+  .spec dt { font: 12.5px var(--mono); color: var(--muted); padding-top: 2px; }
+  .spec dt::before { content: "."; opacity: .5; }
+  .spec dd { font-size: 15.5px; }
+  .spec dd.ok { color: var(--accent-ink); font-weight: 500; }
+
+  /* ---------- how ---------- */
+  .circuit-zone { position: relative; isolation: isolate; }
+  .circuit { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; opacity: .06; color: var(--text); pointer-events: none; }
+  .how-grid { display: grid; gap: 32px; }
+  @media (min-width: 900px) { .how-grid { grid-template-columns: 4fr 7fr; gap: 64px; } .how-intro { position: sticky; top: 96px; align-self: start; } }
+  .steps { list-style: none; position: relative; margin-top: 8px; }
+  .steps::before { content: ""; position: absolute; left: 17px; top: 18px; bottom: 30px; width: 1px; background: linear-gradient(var(--accent), var(--border-strong) 70%); transform-origin: top; }
+  .js .steps::before { transform: scaleY(0); }
+  .js .steps.in-view::before { animation: growY 2.2s var(--ease) .1s forwards; }
+  .steps li { position: relative; display: grid; grid-template-columns: 36px 1fr; gap: 18px; padding: 4px 0 26px; }
+  .steps .num { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); font: 500 12px var(--mono); color: var(--muted); position: relative; }
+  .steps h3 { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.015em; line-height: 1.35; padding-top: 6px; }
+  .steps p { color: var(--muted); font-size: 15.5px; margin-top: 4px; max-width: 58ch; }
+
+  /* ---------- contact / terminal ---------- */
+  .contact-grid { display: grid; gap: 32px; margin-top: 8px; }
+  @media (min-width: 900px) { .contact-grid { grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; } }
+  .contact-note { color: var(--muted); margin-top: 14px; max-width: 44ch; }
+  .term { border: 1px solid var(--border-strong); border-radius: 14px; background: var(--surface); overflow: hidden; font: 13.5px/1.75 var(--mono); }
+  .term-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--surface-2); color: var(--muted); font-size: 11.5px; }
+  .term-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); display: inline-block; }
+  .term-bar span { margin-left: 8px; }
+  .term-body { padding: 16px 18px 18px; overflow-x: auto; }
+  .term-body .row { display: flex; flex-wrap: wrap; gap: 0 14px; align-items: center; min-height: 32px; }
+  .term-body .k { color: var(--muted); width: 72px; flex: none; }
+  .term-body a { color: var(--text); text-decoration: none; border-bottom: 1px dashed var(--border-strong); }
+  .term-body a:hover { color: var(--accent-ink); border-color: var(--accent); }
+  .p { color: var(--accent-ink); user-select: none; }
+  .c { color: var(--muted); }
+  .copy { font: 11.5px var(--mono); height: 26px; padding: 0 9px; border-radius: 7px; border: 1px solid var(--border-strong); background: var(--surface-2); color: var(--muted); cursor: pointer; }
+  .copy:hover { color: var(--text); border-color: var(--muted); }
+  .term-body .cmdline { white-space: pre; }
+  @media (max-width: 560px) {
+    .term { font-size: 12.5px; }
+    .term-body { padding: 14px; }
+    .term-body .k { width: 66px; }
+    .term-body .cmdline { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .fig-wide { overflow-x: auto; margin-right: -24px; padding-right: 24px; }
+    .fig-wide svg { min-width: 560px; }
   }
-  .topbar .bar { max-width: 960px; margin: 0 auto; padding: 0 24px; height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .topbar .brand { font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
-  .topbar .brand:hover { text-decoration: none; }
-  .topbar nav { display: flex; gap: 20px; align-items: center; }
-  .topbar nav a { font-size: 13px; color: var(--dim); transition: color 0.2s ease; }
-  .topbar nav a:hover { color: var(--ink); text-decoration: none; }
-  .topbar nav a.ext { color: var(--accent); }
-  @media (max-width: 540px) { .topbar nav a.hide-sm { display: none; } }
+  .agents-copy { color: var(--muted); max-width: 60ch; margin-top: 14px; }
+  .agents-copy code, .contact-note code { font: 13px var(--mono); color: var(--text); background: var(--surface-2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 6px; }
 
-  header { padding: 120px 0 0; text-align: center; }
-  .name { font-size: 13px; font-weight: 500; color: var(--dim); margin-bottom: 20px; }
-  h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0 auto 22px; max-width: 22ch; text-wrap: balance; }
-  .lede { color: var(--dim); margin: 0 auto 32px; max-width: 58ch; }
-  .lede strong { color: var(--ink); font-weight: 500; }
-  .cta { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
-  .pill {
-    display: inline-block; background: var(--accent); color: #fff;
-    padding: 11px 24px; border-radius: 980px; font-size: 15px; font-weight: 500;
-    transition: all 0.2s ease;
+  /* ---------- footer ---------- */
+  footer { margin-top: 120px; border-top: 1px solid var(--border); padding: 32px 0 56px; }
+  .titleblock { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--border-strong); border-radius: 10px; overflow: hidden; font: 11.5px var(--mono); }
+  .titleblock > div { padding: 10px 12px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .titleblock span { display: block; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+  .titleblock b { font-weight: 500; }
+  @media (min-width: 760px) { .titleblock { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; } .titleblock > div { border-bottom: 0; } .titleblock > div:last-child { border-right: 0; } }
+  @media (max-width: 759px) { .titleblock > div:first-child { grid-column: span 2; } }
+  .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 18px; font: 12px var(--mono); color: var(--muted); }
+  .foot-row a { color: var(--muted); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .corner { position: fixed; right: 14px; bottom: 14px; z-index: 15; font: 11px var(--mono); color: var(--muted); padding: 5px 9px; border: 1px solid var(--border); border-radius: 999px; background: var(--glass); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); pointer-events: none; }
+  @media (max-width: 700px) { .corner { display: none; } }
+
+  /* ---------- dialogs ---------- */
+  dialog { margin: 12vh auto 0; width: min(560px, calc(100% - 32px)); border: 1px solid var(--border-strong); border-radius: 14px; background: var(--surface); color: var(--text); padding: 0; box-shadow: 0 30px 80px -20px #000a; }
+  dialog::backdrop { background: #0008; -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+  .pal-input { width: 100%; border: 0; border-bottom: 1px solid var(--border); background: transparent; color: var(--text); font: 15px var(--sans); padding: 16px 18px; outline: none; }
+  .pal-input::placeholder { color: var(--muted); }
+  .pal-list { list-style: none; max-height: min(52vh, 420px); overflow-y: auto; padding: 6px; }
+  .pal-group { font: 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px 12px 4px; }
+  .pal-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 12px; border-radius: 8px; cursor: pointer; font-size: 14.5px; }
+  .pal-item small { font: 11px var(--mono); color: var(--muted); }
+  .pal-item[aria-selected="true"] { background: var(--surface-2); box-shadow: inset 2px 0 0 var(--accent); }
+  .pal-empty { padding: 18px; color: var(--muted); font-size: 14px; }
+  .pal-foot { display: flex; gap: 14px; flex-wrap: wrap; border-top: 1px solid var(--border); padding: 9px 14px; font: 11px var(--mono); color: var(--muted); }
+  .help-body { padding: 20px 22px 22px; }
+  .help-body h2 { font-size: 1.1rem; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .help-body dl > div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-top: 1px solid var(--border); font-size: 14.5px; }
+  .help-body dd { color: var(--muted); }
+  .help-close { margin-top: 16px; }
+  .toast { position: fixed; left: 50%; bottom: 28px; z-index: 60; transform: translate(-50%, 16px); opacity: 0; transition: opacity .2s, transform .2s; font: 13px var(--mono); background: var(--text); color: var(--bg); padding: 9px 14px; border-radius: 10px; pointer-events: none; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .draw { stroke-dashoffset: 0; }
+    .js .fade, .js .sweep { opacity: 1; }
+    .js .grow, .js .steps::before { transform: none; }
+    .pkt { display: none; }
   }
-  .pill:hover { transform: scale(1.02); filter: brightness(1.1); text-decoration: none; }
-  .textlink { font-size: 15px; padding: 10px 22px; border: 1px solid var(--hair); border-radius: 980px; color: var(--ink); font-weight: 500; transition: all 0.2s ease; }
-  .textlink:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-
-  .numbers { margin: 72px 0 0; padding: 28px 0 8px; border-top: 1px solid var(--hair); }
-  .numbers .caption { font-size: 13px; color: var(--dim); margin-bottom: 24px; }
-  .numgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 24px 24px; }
-  .num { text-align: center; } .num b { display: block; font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
-  .num span { font-size: 13px; color: var(--dim); line-height: 1.4; display: block; margin-top: 4px; max-width: 20ch; margin-left: auto; margin-right: auto; }
-
-  section { padding: 96px 0 0; scroll-margin-top: 24px; max-width: 820px; margin: 0 auto; }
-  h2 { font-size: 13px; font-weight: 500; color: var(--dim); margin-bottom: 28px; }
-
-  .proj { padding: 28px 0; border-top: 1px solid var(--hair); }
-  .proj:last-child { border-bottom: 1px solid var(--hair); }
-  .proj h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
-  .proj .meta { font-size: 13px; color: var(--dim); margin: 2px 0 10px; }
-  .proj .meta em { font-style: normal; color: var(--ok); font-weight: 500; }
-  .proj p { color: var(--dim); font-size: 15.5px; max-width: 66ch; }
-  .proj p strong { color: var(--ink); font-weight: 500; }
-  .fig { margin: 18px 0 4px; max-width: 780px; }
-  .fig svg { width: 100%; height: auto; display: block; }
-  .fig text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-
-  .mech-lede { color: var(--dim); font-size: 15.5px; max-width: 66ch; margin-bottom: 22px; }
-  .facts { border-top: 1px solid var(--hair); display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 0 56px; }
-  .facts div { display: flex; justify-content: space-between; gap: 24px; padding: 13px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
-  .facts dt { color: var(--dim); }
-  .facts dd { text-align: right; }
-  .facts dd.ok { color: var(--ok); font-weight: 500; }
-
-  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0 56px; border-bottom: 1px solid var(--hair); }
-  .how p { font-size: 15.5px; color: var(--dim); padding: 14px 0; border-top: 1px solid var(--hair); }
-  .how strong { color: var(--ink); font-weight: 500; }
-
-  .contact { padding: 110px 0 120px; text-align: center; }
-  .contact h2 { margin-bottom: 14px; }
-  .contact .big { font-size: clamp(26px, 4.5vw, 36px); font-weight: 600; letter-spacing: -0.015em; margin-bottom: 14px; }
-  .contact .note { color: var(--dim); margin: 0 auto 30px; max-width: 44ch; }
-  .contact .links { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  @media print { .topbar, .corner, dialog, .toast { display: none !important; } }
 </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="bar">
-      <a class="brand" href="#top">Cooper Lockridge</a>
-      <nav>
-        <a href="#work">Work</a>
-        <a href="#mechanical" class="hide-sm">Mechanical</a>
-        <a href="#about" class="hide-sm">About</a>
-        <a href="#how" class="hide-sm">How I work</a>
-        <a href="#contact">Contact</a>
-        <a class="ext" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
-        <a class="ext" href="resume.pdf" download>Resume</a>
-      </nav>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Cooper Lockridge, back to top">cooper@<b>lockridge</b>:~$<span class="cursor" aria-hidden="true"></span></a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#mechanical">Mechanical</a>
+      <a href="#about">About</a>
+      <a href="#how">How I work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="bar-right">
+      <span class="status" title="Open to full-time, 2027 — software or mechanical"><i aria-hidden="true"></i>open to 2027 roles</span>
+      <button class="iconbtn js-only" type="button" id="open-palette" aria-label="Open command palette" aria-haspopup="dialog">
+        <span class="k-desk"><kbd data-mod>⌘</kbd> <kbd>K</kbd></span>
+        <span class="k-mob">Menu</span>
+      </button>
+      <button class="iconbtn js-only" type="button" id="theme-toggle" aria-label="Toggle color theme">
+        <svg class="theme-light-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.6M8 13.4V15M1 8h1.6M13.4 8H15M3 3l1.1 1.1M11.9 11.9 13 13M3 13l1.1-1.1M11.9 4.1 13 3"/></svg>
+        <svg class="theme-dark-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M13.5 9.6A5.8 5.8 0 0 1 6.4 2.5a5.8 5.8 0 1 0 7.1 7.1Z"/></svg>
+      </button>
     </div>
   </div>
-  <div class="wrap" id="top">
-    <header>
-      <h1 class="up">I build software with AI agents, then prove it right.</h1>
-      <p class="lede up" style="animation-delay:120ms">
-        Software engineer intern at a fintech company; mechanical engineering senior at Kennesaw State.
-        I direct AI coding agents to ship production software and <strong>audit everything they produce</strong>.
-        Atlanta area; happy remote or on-site.
-      </p>
-      <div class="cta up" style="animation-delay:160ms">
-        <a class="pill" href="mailto:Cooperlockridge@gmail.com">Get in touch</a>
-        <a class="textlink" href="resume.pdf" download>Resume</a>
-        <a class="textlink" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
-      </div>
+</header>
 
-      <div class="numbers up" style="animation-delay:220ms">
-        <p class="caption">Numbers I can prove, from production systems:</p>
-        <div class="numgrid">
-          <div class="num"><b>467</b><span>merged PRs, counted live from GitHub</span></div>
-          <div class="num"><b>2,925</b><span>tests, from zero in six weeks</span></div>
-          <div class="num"><b>46</b><span>tools on an MCP server I built</span></div>
-          <div class="num"><b>~3 min</b><span>PR approval to production</span></div>
+<main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title"><span class="h1-name">Cooper Lockridge — software engineer · mechanical engineer</span><span class="h1-value">I build software with AI agents, then <em>prove it right.</em></span></h1>
+          <p class="lede">
+            Software engineer intern at a fintech company; mechanical engineering senior at Kennesaw State.
+            I direct AI coding agents to ship production software and <strong>audit everything they produce</strong>.
+            Atlanta area; happy remote or on-site.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="mailto:Cooperlockridge@gmail.com">Get in touch</a>
+            <a class="btn" href="resume.pdf" download>Resume <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9m-4-4 4 4 4-4M3 14h10"/></svg></a>
+            <a class="btn" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
+            <a class="btn" href="https://github.com/cooperlockridge">GitHub</a>
+          </div>
+          <p class="tags">
+            <span>SWE intern</span><span class="sep" aria-hidden="true">·</span><span>ME senior</span><span class="sep" aria-hidden="true">·</span><span>MCP</span><span class="sep" aria-hidden="true">·</span>
+            <span class="live"><i aria-hidden="true"></i>Atlanta area<span class="js-only">&nbsp;· <span data-atl-time>--:--</span>&nbsp;ET</span></span>
+          </p>
         </div>
-      </div>
-    </header>
 
-    <section id="work">
-      <h2>Work</h2>
-
-      <div class="proj">
-        <h3>Software Factory</h3>
-        <p class="meta"><em>In production.</em> Claude agents, Node, GitHub</p>
-        <p>Any employee clicks Feedback; an agent reproduces the bug, fixes it, and opens a pull request.
-        A human decides what ships. First six reports: <strong>five merged PRs, four the same day</strong>.</p>
-        <div class="fig" aria-label="Pipeline: feedback, reproduce, fix and test, human review, production">
-          <svg viewBox="0 0 640 92" role="img">
-            <g fill="none" stroke="#d2d2d7">
-              <rect x="1" y="8" width="110" height="40" rx="10"/>
-              <rect x="133" y="8" width="110" height="40" rx="10"/>
-              <rect x="265" y="8" width="110" height="40" rx="10"/>
-              <rect x="397" y="8" width="110" height="40" rx="10"/>
-              <rect x="529" y="8" width="110" height="40" rx="10"/>
+        <figure class="hero-fig anim">
+          <svg viewBox="0 0 480 420" role="img" aria-labelledby="figA-t">
+            <title id="figA-t">Agent topology: an orchestrator node labeled plan fans out to four worker agents — build, review, test, deploy — and work reaches production only after a human approves.</title>
+            <g class="ln" stroke-width="1.2">
+              <path d="M240 88 C240 190 60 170 60 276"/>
+              <path d="M240 88 C240 190 180 190 180 276"/>
+              <path d="M240 88 C240 190 300 190 300 276"/>
+              <path d="M240 88 C240 190 420 170 420 276"/>
             </g>
-            <g fill="#6e6e73" font-size="13" text-anchor="middle">
-              <text x="56" y="33">feedback</text>
-              <text x="188" y="33">reproduce</text>
-              <text x="320" y="33">fix + test</text>
-              <text x="452" y="33">human review</text>
-              <text x="584" y="33" fill="#1a7f4b">production</text>
-              <text x="122" y="32">→</text>
-              <text x="254" y="32">→</text>
-              <text x="386" y="32">→</text>
-              <text x="518" y="32">→</text>
+            <g class="ac" stroke-width="3">
+              <path class="pkt loop" pathLength="1" style="--d:0s" d="M240 88 C240 190 60 170 60 276"/>
+              <path class="pkt loop" pathLength="1" style="--d:-.7s" d="M240 88 C240 190 180 190 180 276"/>
+              <path class="pkt loop" pathLength="1" style="--d:-1.4s" d="M240 88 C240 190 300 190 300 276"/>
+              <path class="pkt loop" pathLength="1" style="--d:-2.1s" d="M240 88 C240 190 420 170 420 276"/>
             </g>
-            <text x="188" y="72" fill="#6e6e73" font-size="12" text-anchor="middle">no reproduction → no fix</text>
-            <line x1="188" y1="52" x2="188" y2="58" stroke="#d2d2d7"/>
-          </svg>
-        </div>
-        <p>Bug reports are untrusted text, so the pipeline is hardened against prompt injection and fails closed.</p>
-      </div>
-
-      <div class="proj">
-        <h3>Siege</h3>
-        <p class="meta">Claude skill, multi-agent pipeline</p>
-        <p>A skill that turns review into a gauntlet — 41 agents, three adversarial passes, two fixers.
-        <strong>Nothing ships on one model's opinion.</strong></p>
-        <div class="fig" aria-label="Pipeline: 20 agents sweep, 8 verify, fixer, 4 adversarial review, 8 verify, fixer, ship">
-          <svg viewBox="0 0 640 56" role="img">
-            <g fill="none" stroke="#d2d2d7">
-              <rect x="1" y="12" width="86" height="30" rx="15"/>
-              <rect x="107" y="12" width="74" height="30" rx="15"/>
-              <rect x="201" y="12" width="52" height="30" rx="15"/>
-              <rect x="273" y="12" width="104" height="30" rx="15"/>
-              <rect x="397" y="12" width="74" height="30" rx="15"/>
-              <rect x="491" y="12" width="52" height="30" rx="15"/>
-              <rect x="563" y="12" width="76" height="30" rx="15"/>
-            </g>
-            <g font-size="12.5" text-anchor="middle">
-              <text x="44" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">20</tspan> sweep</text>
-              <text x="144" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">8</tspan> verify</text>
-              <text x="227" y="31" fill="#6e6e73">fixer</text>
-              <text x="325" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">4</tspan> adversarial</text>
-              <text x="434" y="31" fill="#6e6e73"><tspan fill="#1d1d1f" font-weight="600">8</tspan> verify</text>
-              <text x="517" y="31" fill="#6e6e73">fixer</text>
-              <text x="601" y="31" fill="#1a7f4b">✓ ship</text>
-              <g fill="#a1a1a6">
-                <text x="97" y="31">→</text>
-                <text x="191" y="31">→</text>
-                <text x="263" y="31">→</text>
-                <text x="387" y="31">→</text>
-                <text x="481" y="31">→</text>
-                <text x="553" y="31">→</text>
+            <rect class="nof ac pulse loop" x="180" y="40" width="120" height="48" rx="12" stroke-width="1.5"/>
+            <rect class="box" x="180" y="40" width="120" height="48" rx="12"/>
+            <circle class="ac-f" cx="198" cy="64" r="4"/>
+            <text class="t-hi" x="212" y="62" font-size="14" font-weight="500">plan</text>
+            <text class="t" x="212" y="77" font-size="10">orchestrator</text>
+            <g>
+              <rect class="box" x="12" y="276" width="96" height="44" rx="10"/>
+              <rect class="box" x="132" y="276" width="96" height="44" rx="10"/>
+              <rect class="box" x="252" y="276" width="96" height="44" rx="10"/>
+              <rect class="box" x="372" y="276" width="96" height="44" rx="10"/>
+              <g class="t-hi" font-size="13" text-anchor="middle">
+                <text x="60" y="303">build</text><text x="180" y="303">review</text><text x="300" y="303">test</text><text x="420" y="303">deploy</text>
               </g>
+              <g class="cy-f"><circle cx="98" cy="286" r="3"/><circle cx="218" cy="286" r="3"/><circle cx="338" cy="286" r="3"/></g>
+              <circle class="ac-f" cx="458" cy="286" r="3"/>
             </g>
+            <path class="ln-s" d="M60 320 V368 H420 V320" stroke-width="1.2"/>
+            <path class="ac nof draw" pathLength="1" style="--d:.4s;--dur:1.6s" d="M60 320 V368 H420 V320" stroke-width="1.6"/>
+            <g class="fade" style="--d:1.6s">
+              <rect class="sf-f ac" x="324" y="358" width="20" height="20" rx="4" transform="rotate(45 334 368)" stroke-width="1.4"/>
+              <path class="ac nof" d="M329 368 l3.5 3.5 6.5 -7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <text class="t" x="334" y="402" font-size="10.5" text-anchor="middle">human approves</text>
+            </g>
+            <text class="t" x="240" y="24" font-size="10.5" text-anchor="middle" letter-spacing=".08em">FIG. 01 — AGENT TOPOLOGY</text>
           </svg>
-        </div>
+        </figure>
       </div>
 
-      <div class="proj">
-        <h3>Restaurant Time Clock &amp; Payroll</h3>
-        <p class="meta"><em>Real paying client.</em> Next.js, TypeScript, Supabase</p>
-        <p>A barbecue restaurant runs payroll on this: PIN-entry terminal, overtime rules, and Excel exports
-        that match the payroll processor's template byte for byte. <strong>226 tests</strong>, and one invariant I'm fond of:
-        the export file exists if and only if an approved pay period does.</p>
-      </div>
+      <ul class="numbers" aria-label="Numbers from production systems">
+        <li><span class="n">467</span><span class="l">merged PRs, counted live from GitHub</span></li>
+        <li><span class="n">2,925</span><span class="l">tests, from zero in six weeks</span></li>
+        <li><span class="n">46</span><span class="l">tools on an MCP server I built</span></li>
+        <li><span class="n">~3 min</span><span class="l">PR approval to production</span></li>
+      </ul>
+      <p class="numbers-cap">// numbers I can prove, from production systems</p>
+    </div>
+  </section>
 
-      <div class="proj">
-        <h3>Personal Finance Dashboard</h3>
-        <p class="meta">React, TypeScript, Vite</p>
-        <p>A weekly paycheck allocator built for one real user. The domain model strictly separates pre-tax
-        and post-tax dollars, so tax math and budget math can never contaminate each other.</p>
-      </div>
+  <!-- ================= WORK ================= -->
+  <section class="sec" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <p class="kicker">01 / Work</p>
+      <h2 id="work-title">Things I've shipped</h2>
 
-      <div class="proj">
-        <h3>SolidWorks, driven by AI</h3>
-        <p class="meta">Open source, MCP, VBA</p>
-        <p>Extended an open-source MCP server so Claude can drive my CAD — modeling, drawings, batch export.
-        I'm an ME student; my homework tooling writes VBA macros for me.</p>
-      </div>
-    </section>
+      <div class="bento">
+        <!-- 01 Software Factory -->
+        <article class="card proj" id="software-factory" tabindex="-1" aria-labelledby="sf-title">
+          <div class="proj-top"><span class="kicker plain">Project / 01</span><span class="badge">In production</span></div>
+          <h3 id="sf-title">Software Factory</h3>
+          <ul class="chips" aria-label="Stack"><li>Claude agents</li><li>Node</li><li>GitHub</li></ul>
+          <div class="body">
+            <p>Any employee clicks Feedback; an agent reproduces the bug, fixes it, and opens a pull request.
+            A human decides what ships. First six reports: <strong>five merged PRs, four the same day</strong>.</p>
+            <p>Bug reports are untrusted text, so the pipeline is hardened against prompt injection and fails closed.</p>
+          </div>
+          <div class="fig fig-wide anim">
+            <svg viewBox="0 0 720 200" role="img" aria-labelledby="figB-t">
+              <title id="figB-t">Pipeline: feedback, reproduce, fix and test, human review, production. A gate branches off reproduce: no reproduction means no fix.</title>
+              <path class="ln" d="M20 70 H700" stroke-width="1.2"/>
+              <g class="cy" stroke-width="7"><path class="pkt loop" pathLength="1" style="--dur:5s;stroke-dasharray:.02 .98" d="M20 70 H700"/><path class="pkt loop" pathLength="1" style="--dur:5s;--d:-2.5s;stroke-dasharray:.02 .98" d="M20 70 H700"/></g>
+              <g>
+                <rect class="box" x="20" y="48" width="112" height="44" rx="10"/>
+                <rect class="box" x="162" y="48" width="112" height="44" rx="10"/>
+                <rect class="box" x="304" y="48" width="112" height="44" rx="10"/>
+                <rect class="box" x="446" y="48" width="112" height="44" rx="10"/>
+                <rect class="box" x="588" y="48" width="112" height="44" rx="10" style="stroke:var(--accent)"/>
+              </g>
+              <g class="t-hi" font-size="13" text-anchor="middle">
+                <text x="76" y="75">feedback</text><text x="218" y="75">reproduce</text><text x="360" y="75">fix + test</text><text x="502" y="75">human review</text>
+                <text x="644" y="75" class="t-ac">production</text>
+              </g>
+              <g class="t" font-size="10.5" text-anchor="middle">
+                <text x="76" y="112">untrusted input</text><text x="360" y="112">agent writes both</text><text x="502" y="112">a human decides</text>
+                <text x="573" y="40">~3 min</text>
+              </g>
+              <g class="fade" style="--d:.9s">
+                <circle class="ac-f" cx="700" cy="48" r="11"/>
+                <path d="M695 48 l3.5 3.5 6.5 -7" fill="none" stroke="var(--on-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <path class="wn nof fade" style="--d:.3s" d="M218 92 V158 H262" stroke-width="1.4" stroke-dasharray="4 3"/>
+              <g class="fade" style="--d:.8s">
+                <rect x="262" y="140" width="206" height="36" rx="8" class="sf-f wn" stroke-dasharray="4 3"/>
+                <text class="t-wn" x="365" y="162" font-size="11.5" text-anchor="middle">no reproduction → no fix</text>
+                <text class="t" x="228" y="130" font-size="10">gate</text>
+              </g>
+              <text class="t" x="700" y="162" font-size="10.5" text-anchor="end">6 reports → 5 merged PRs</text>
+              <text class="t-ac" x="700" y="180" font-size="10.5" text-anchor="end">4 the same day</text>
+            </svg>
+          </div>
+        </article>
 
-    <section id="mechanical">
-      <h2>Mechanical</h2>
-      <p class="mech-lede">I'm a mechanical engineer by training: SolidWorks and AutoCAD, 3D printing, reverse
+        <!-- 02 Siege -->
+        <article class="card proj" id="siege" tabindex="-1" aria-labelledby="siege-title">
+          <div class="proj-top"><span class="kicker plain">Project / 02</span></div>
+          <h3 id="siege-title">Siege</h3>
+          <ul class="chips" aria-label="Stack"><li>Claude skill</li><li>multi-agent pipeline</li></ul>
+          <div class="body">
+            <p>A skill that turns review into a gauntlet — 41 agents, three adversarial passes, two fixers.
+            <strong>Nothing ships on one model's opinion.</strong></p>
+            <ol class="stages" aria-label="Siege stages">
+              <li><span><b>20</b> sweep</span></li><li><span><b>8</b> verify</span></li><li><span>fixer</span></li><li><span><b>4</b> adversarial</span></li><li><span><b>8</b> verify</span></li><li><span>fixer</span></li><li><span class="ok">✓ ship</span></li>
+            </ol>
+          </div>
+          <div class="fig anim">
+            <svg viewBox="0 0 400 300" role="img" aria-labelledby="figC-t">
+              <title id="figC-t">A pull request at the center of three rings of reviewer agents: 20 sweep, 8 verify, 4 adversarial. Findings converge on the PR until the final ring turns green.</title>
+              <defs>
+                <radialGradient id="sweepG" cx="200" cy="150" r="134" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="var(--accent)" stop-opacity="0"/><stop offset="1" stop-color="var(--accent)" stop-opacity=".22"/></radialGradient>
+              </defs>
+              <g class="ln" stroke-dasharray="2 4"><circle cx="200" cy="150" r="126"/><circle cx="200" cy="150" r="92"/><circle cx="200" cy="150" r="58"/></g>
+              <path class="sweep" fill="url(#sweepG)" d="M200 150 L200.0 16.0 A134 134 0 0 1 286.1 47.4Z"/>
+              <g class="mut-f">
+                <circle cx="200.0" cy="24.0" r="3"/><circle cx="238.9" cy="30.2" r="3"/><circle cx="274.1" cy="48.1" r="3"/><circle cx="301.9" cy="75.9" r="3"/><circle cx="319.8" cy="111.1" r="3"/><circle cx="326.0" cy="150.0" r="3"/><circle cx="319.8" cy="188.9" r="3"/><circle cx="301.9" cy="224.1" r="3"/><circle cx="274.1" cy="251.9" r="3"/><circle cx="238.9" cy="269.8" r="3"/><circle cx="200.0" cy="276.0" r="3"/><circle cx="161.1" cy="269.8" r="3"/><circle cx="125.9" cy="251.9" r="3"/><circle cx="98.1" cy="224.1" r="3"/><circle cx="80.2" cy="188.9" r="3"/><circle cx="74.0" cy="150.0" r="3"/><circle cx="80.2" cy="111.1" r="3"/><circle cx="98.1" cy="75.9" r="3"/><circle cx="125.9" cy="48.1" r="3"/><circle cx="161.1" cy="30.2" r="3"/>
+              </g>
+              <g class="cy-f"><circle cx="235.2" cy="65.0" r="3.5"/><circle cx="285.0" cy="114.8" r="3.5"/><circle cx="285.0" cy="185.2" r="3.5"/><circle cx="235.2" cy="235.0" r="3.5"/><circle cx="164.8" cy="235.0" r="3.5"/><circle cx="115.0" cy="185.2" r="3.5"/><circle cx="115.0" cy="114.8" r="3.5"/><circle cx="164.8" cy="65.0" r="3.5"/></g>
+              <g class="wn-f"><circle cx="241.0" cy="109.0" r="4"/><circle cx="241.0" cy="191.0" r="4"/><circle cx="159.0" cy="191.0" r="4"/><circle cx="159.0" cy="109.0" r="4"/></g>
+              <g class="nof" stroke="var(--muted)" stroke-width="1" stroke-linecap="round">
+                <path class="draw" pathLength="1" style="--d:.5s" d="M237.1 35.9 L211.7 113.9"/>
+                <path class="draw" pathLength="1" style="--d:.9s" d="M314.1 112.9 L236.1 138.3"/>
+                <path class="draw" pathLength="1" style="--d:1.3s" d="M297.1 220.5 L230.7 172.3"/>
+                <path class="draw" pathLength="1" style="--d:1.7s" d="M162.9 264.1 L188.3 186.1"/>
+                <path class="draw" pathLength="1" style="--d:2.1s" d="M85.9 187.1 L163.9 161.7"/>
+                <path class="draw" pathLength="1" style="--d:2.5s" d="M102.9 79.5 L169.3 127.7"/>
+                <path class="draw" pathLength="1" style="--d:2.9s" d="M162.9 35.9 L188.3 113.9"/>
+              </g>
+              <polygon class="box" points="200.0,124.0 222.5,137.0 222.5,163.0 200.0,176.0 177.5,163.0 177.5,137.0"/>
+              <text class="t-hi" x="200" y="154.5" font-size="12" font-weight="500" text-anchor="middle">PR</text>
+              <circle class="ac nof draw" pathLength="1" style="--d:3.9s;--dur:.9s" cx="200" cy="150" r="36" stroke-width="2" transform="rotate(-90 200 150)"/>
+              <g font-size="10" class="t">
+                <circle class="mut-f" cx="12" cy="16" r="3"/><text x="20" y="19.5">20 sweep</text>
+                <circle class="cy-f" cx="12" cy="32" r="3.5"/><text x="20" y="35.5">8 verify</text>
+                <circle class="wn-f" cx="12" cy="48" r="4"/><text x="20" y="51.5">4 adversarial</text>
+              </g>
+              <text class="t-ac fade" style="--d:4.3s" x="388" y="290" font-size="10.5" text-anchor="end">✓ ship</text>
+            </svg>
+          </div>
+        </article>
+
+        <!-- 03 Time Clock -->
+        <article class="card proj" id="time-clock" tabindex="-1" aria-labelledby="tc-title">
+          <div class="proj-top"><span class="kicker plain">Project / 03</span><span class="badge">Real paying client</span></div>
+          <h3 id="tc-title">Restaurant Time Clock &amp; Payroll</h3>
+          <ul class="chips" aria-label="Stack"><li>Next.js</li><li>TypeScript</li><li>Supabase</li></ul>
+          <div class="body">
+            <p>A barbecue restaurant runs payroll on this: PIN-entry terminal, overtime rules, and Excel exports
+            that match the payroll processor's template byte for byte. <strong>226 tests</strong>, and one invariant I'm fond of:
+            the export file exists if and only if an approved pay period does.</p>
+          </div>
+          <div class="fig anim">
+            <svg viewBox="0 0 400 200" role="img" aria-labelledby="figD-t">
+              <title id="figD-t">A clock face feeds rows into a payroll ledger; the export.xlsx file is locked in only when the pay period is approved.</title>
+              <circle class="ln" cx="74" cy="96" r="54"/>
+              <path class="ln-s" stroke-width="1.2" d="M74.0 54.0L74.0 44.0 M97.0 56.2L100.0 51.0 M113.8 73.0L119.0 70.0 M116.0 96.0L126.0 96.0 M113.8 119.0L119.0 122.0 M97.0 135.8L100.0 141.0 M74.0 138.0L74.0 148.0 M51.0 135.8L48.0 141.0 M34.2 119.0L29.0 122.0 M32.0 96.0L22.0 96.0 M34.2 73.0L29.0 70.0 M51.0 56.2L48.0 51.0"/>
+              <path d="M74 96 L52 82" stroke="var(--text)" stroke-width="2.2" stroke-linecap="round"/>
+              <path class="hand" d="M74 96 L74 52" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle class="txt-f" cx="74" cy="96" r="3"/>
+              <text class="t" x="74" y="170" font-size="10" text-anchor="middle">PIN clock-in</text>
+              <path class="ln-s" d="M140 96 H158 m-5 -4 5 4 -5 4" stroke-width="1.2"/>
+              <g>
+                <rect class="box-bg" x="166" y="30" width="136" height="132" rx="8"/>
+                <g class="t" font-size="9"><text x="176" y="47">emp</text><text x="216" y="47">reg</text><text x="252" y="47">ot</text><text x="280" y="47">Σ</text></g>
+                <path class="ln" d="M166 54 H302 M166 76 H302 M166 98 H302 M166 120 H302 M166 142 H302"/>
+                <g class="mut-f" opacity=".55">
+                  <rect class="grow" style="--d:.9s" x="176" y="61" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.0s" x="216" y="61" width="26" height="8" rx="2"/><rect class="grow" style="--d:1.1s" x="252" y="61" width="12" height="8" rx="2"/>
+                  <rect class="grow" style="--d:1.2s" x="176" y="83" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.3s" x="216" y="83" width="30" height="8" rx="2"/><rect class="grow" style="--d:1.4s" x="252" y="83" width="6" height="8" rx="2"/>
+                  <rect class="grow" style="--d:1.5s" x="176" y="105" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.6s" x="216" y="105" width="22" height="8" rx="2"/>
+                  <rect class="grow" style="--d:1.7s" x="176" y="127" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.8s" x="216" y="127" width="30" height="8" rx="2"/><rect class="grow" style="--d:1.9s" x="252" y="127" width="16" height="8" rx="2"/>
+                </g>
+                <g class="txt-f"><rect class="grow" style="--d:1.2s" x="280" y="61" width="14" height="8" rx="2"/><rect class="grow" style="--d:1.5s" x="280" y="83" width="14" height="8" rx="2"/><rect class="grow" style="--d:1.7s" x="280" y="105" width="12" height="8" rx="2"/><rect class="grow" style="--d:2.0s" x="280" y="127" width="14" height="8" rx="2"/></g>
+                <text class="t" x="234" y="156" font-size="9" text-anchor="middle">pay period</text>
+              </g>
+              <g class="fade" style="--d:2.3s">
+                <rect class="nof ac" x="182" y="16" width="104" height="18" rx="4" transform="rotate(-4 234 25)"/>
+                <text class="t-ac" x="234" y="29" font-size="10" text-anchor="middle" transform="rotate(-4 234 25)">✓ APPROVED</text>
+              </g>
+              <path class="ln-s" d="M310 96 H326 m-5 -4 5 4 -5 4" stroke-width="1.2"/>
+              <g>
+                <path class="box" d="M336 60 H368 L382 74 V132 H336 Z"/>
+                <path class="ln" d="M368 60 V74 H382"/>
+                <g class="t" font-size="8.5"><text x="344" y="92">xlsx</text></g>
+                <path class="ln" d="M344 102 H374 M344 110 H374 M344 118 H366"/>
+              </g>
+              <g class="fade" style="--d:2.8s">
+                <rect class="ac-f" x="366" y="122" width="22" height="17" rx="3"/>
+                <path class="nof ac" d="M370.5 122 v-4 a6.5 6.5 0 0 1 13 0 v4" stroke-width="2"/>
+                <circle cx="377" cy="130.5" r="2" fill="var(--on-accent)"/>
+              </g>
+              <text class="t-hi" x="359" y="156" font-size="10" text-anchor="middle">export.xlsx</text>
+              <text class="t" x="200" y="190" font-size="10" text-anchor="middle">export exists ⇔ period approved</text>
+            </svg>
+          </div>
+        </article>
+
+        <!-- 04 Finance -->
+        <article class="card proj" id="finance-dashboard" tabindex="-1" aria-labelledby="fd-title">
+          <div class="proj-top"><span class="kicker plain">Project / 04</span></div>
+          <h3 id="fd-title">Personal Finance Dashboard</h3>
+          <ul class="chips" aria-label="Stack"><li>React</li><li>TypeScript</li><li>Vite</li></ul>
+          <div class="body">
+            <p>A weekly paycheck allocator built for one real user. The domain model strictly separates pre-tax
+            and post-tax dollars, so tax math and budget math can never contaminate each other.</p>
+          </div>
+          <div class="fig anim">
+            <svg viewBox="0 0 400 200" role="img" aria-labelledby="figE-t">
+              <title id="figE-t">A stack of budget envelope cards with a spending sparkline, beside a donut split into pre-tax and post-tax dollars that never mix.</title>
+              <g transform="translate(96 78) matrix(.866 .5 -.866 .5 0 0)">
+                <rect class="box-bg" x="0" y="32" width="120" height="76" rx="6"/>
+                <rect class="box-bg" x="0" y="16" width="120" height="76" rx="6"/>
+              </g>
+              <g transform="translate(96 46) matrix(.866 .5 -.866 .5 0 0)">
+                <rect class="box" x="0" y="0" width="120" height="76" rx="6"/>
+                <path class="ln" d="M10 64 H110 M10 48 H110 M10 32 H110" stroke-dasharray="2 3"/>
+                <polyline class="nof ac draw" pathLength="1" style="--d:.3s;--dur:1.6s" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="10,58 24,52 36,55 50,40 64,44 78,30 92,34 110,16"/>
+                <circle class="ac-f fade" style="--d:1.8s" cx="110" cy="16" r="3"/>
+              </g>
+              <text class="t" x="96" y="186" font-size="10" text-anchor="middle">weekly envelopes</text>
+              <g transform="rotate(-90 300 92)">
+                <circle class="nof" cx="300" cy="92" r="48" stroke="var(--surface-2)" stroke-width="14"/>
+                <circle class="nof cy draw" pathLength="1" style="--d:.4s;stroke-dasharray:.32 2" cx="300" cy="92" r="48" stroke-width="14"/>
+                <circle class="nof ac draw" pathLength="1" style="--d:1.2s;stroke-dasharray:.64 2" cx="300" cy="92" r="48" stroke-width="14" transform="rotate(122.4 300 92)"/>
+              </g>
+              <text class="t-hi" x="300" y="99" font-size="20" text-anchor="middle">≠</text>
+              <g font-size="10">
+                <rect class="cy-f" x="250" y="160" width="8" height="8" rx="2"/><text class="t" x="262" y="167.5">pre-tax</text>
+                <rect class="ac-f" x="312" y="160" width="8" height="8" rx="2"/><text class="t" x="324" y="167.5">post-tax</text>
+              </g>
+              <text class="t" x="300" y="186" font-size="10" text-anchor="middle">never mixed</text>
+            </svg>
+          </div>
+        </article>
+
+        <!-- 05 SolidWorks -->
+        <article class="card proj" id="solidworks-mcp" tabindex="-1" aria-labelledby="sw-title">
+          <div class="proj-top"><span class="kicker plain">Project / 05</span></div>
+          <h3 id="sw-title">SolidWorks, driven by AI</h3>
+          <ul class="chips" aria-label="Stack"><li>Open source</li><li>MCP</li><li>VBA</li></ul>
+          <div class="body">
+            <p>Extended an open-source MCP server so Claude can drive my CAD — modeling, drawings, batch export.
+            I'm an ME student; my homework tooling writes VBA macros for me.</p>
+          </div>
+          <div class="fig anim">
+            <svg viewBox="0 0 400 200" role="img" aria-labelledby="figF-t">
+              <title id="figF-t">A JSON tool call crosses a dashed MCP bridge and becomes an isometric wireframe part — an L-bracket with a hole — being modeled in CAD.</title>
+              <rect class="box" x="6" y="30" width="170" height="130" rx="8"/>
+              <text class="t" x="16" y="22" font-size="9.5" letter-spacing=".06em">CLAUDE → TOOL CALL</text>
+              <g font-size="10">
+                <text x="16" y="54"><tspan class="t">{</tspan><tspan class="t-cy">"method"</tspan><tspan class="t">: </tspan><tspan class="t-hi">"tools/call"</tspan><tspan class="t">,</tspan></text>
+                <text x="16" y="72"><tspan class="t"> </tspan><tspan class="t-cy">"params"</tspan><tspan class="t">: {</tspan></text>
+                <text x="16" y="90"><tspan class="t">  </tspan><tspan class="t-cy">"name"</tspan><tspan class="t">: </tspan><tspan class="t-hi">"extrude"</tspan><tspan class="t">,</tspan></text>
+                <text x="16" y="108"><tspan class="t">  </tspan><tspan class="t-cy">"arguments"</tspan><tspan class="t">: {</tspan></text>
+                <text x="16" y="126"><tspan class="t">   </tspan><tspan class="t-cy">"depth_mm"</tspan><tspan class="t">: </tspan><tspan class="t-ac">20</tspan></text>
+                <text x="16" y="144" class="t"> }}}</text>
+              </g>
+              <path class="ln-s" d="M176 96 H244" stroke-dasharray="4 4" stroke-width="1.4"/>
+              <path d="M239 91 l5 5 -5 5" class="nof ln-s" stroke-width="1.4"/>
+              <rect class="sf-f ac" x="190" y="84" width="40" height="22" rx="6"/>
+              <text class="t-ac" x="210" y="99" font-size="10.5" font-weight="500" text-anchor="middle">MCP</text>
+              <text class="t" x="210" y="124" font-size="9.5" text-anchor="middle">→ VBA</text>
+              <g class="nof" stroke-linejoin="round" stroke-linecap="round">
+                <path class="draw" pathLength="1" style="--d:.2s;stroke:var(--line)" stroke-width="1" d="M312.0 112.0 L387.3 155.5 L387.3 143.9 L322.0 106.2 L322.0 54.0 L312.0 48.2Z"/>
+                <path class="draw cy" pathLength="1" style="--d:.8s" stroke-width="1.2" d="M312.0 112.0L261.8 141.0 M387.3 155.5L337.1 184.5 M387.3 143.9L337.1 172.9 M322.0 106.2L271.8 135.2 M322.0 54.0L271.8 83.0 M312.0 48.2L261.8 77.2"/>
+                <path class="draw cy" pathLength="1" style="--d:1.3s" stroke-width="1.5" d="M261.8 141.0 L337.1 184.5 L337.1 172.9 L271.8 135.2 L271.8 83.0 L261.8 77.2Z"/>
+                <path class="draw ac" pathLength="1" style="--d:1.9s" stroke-width="1.3" d="M340.9 146.1 L338.3 147.2 L335.3 147.9 L332.1 148.2 L328.9 147.9 L325.9 147.2 L323.3 146.1 L321.3 144.6 L320.1 142.9 L319.7 141.0 L320.1 139.1 L321.3 137.4 L323.3 135.9 L325.9 134.8 L328.9 134.1 L332.1 133.8 L335.3 134.1 L338.3 134.8 L340.9 135.9 L342.9 137.4 L344.1 139.1 L344.5 141.0 L344.1 142.9 L342.9 144.6Z"/>
+              </g>
+              <text class="t" x="324" y="30" font-size="9.5" text-anchor="middle" letter-spacing=".06em">SOLIDWORKS</text>
+            </svg>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MECHANICAL ================= -->
+  <section class="sec" id="mechanical" aria-labelledby="mech-title">
+    <div class="wrap">
+      <p class="kicker">02 / Mechanical</p>
+      <h2 id="mech-title">Mechanical engineer by training</h2>
+      <p class="sec-lede">I'm a mechanical engineer by training: SolidWorks and AutoCAD, 3D printing, reverse
       engineering, and coursework through machine dynamics, thermodynamics, heat transfer, and strength of
       materials. That training shows up in my software.</p>
-      <div class="how">
+
+      <figure class="bp anim">
+        <figcaption class="bp-head"><span>DWG 02 — Flanged shaft · 3rd-angle</span><span>Illustrative drawing · Scale 1:1</span></figcaption>
+        <div class="bp-scroll">
+        <svg viewBox="0 0 960 460" role="img" aria-labelledby="figG-t">
+          <title id="figG-t">Engineering drawing of a flanged shaft in three views — front, right, and section A–A — with diameter dimensions, a perpendicularity and position feature control frame, datum symbols A and B, section hatching, and a title block drawn by C. Lockridge, scale 1:1, revision B.</title>
+          <defs>
+            <pattern id="bpGrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="var(--bp-ink)" stroke-width=".5" opacity=".13"/></pattern>
+            <pattern id="bpGridL" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="var(--bp-ink)" stroke-width=".6" opacity=".2"/></pattern>
+            <pattern id="bpHatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V6" stroke="var(--bp-ink)" stroke-width=".8"/></pattern>
+            <marker id="bpA" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="10" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 3L0 6Z" fill="var(--bp-ink)"/></marker>
+          </defs>
+          <rect width="960" height="460" fill="url(#bpGrid)"/>
+          <rect width="960" height="460" fill="url(#bpGridL)"/>
+          <rect class="s" x="8" y="8" width="944" height="444" stroke-width="1.2"/>
+          <g class="t" font-size="9"><text x="236" y="21">1</text><text x="476" y="21">2</text><text x="716" y="21">3</text></g>
+          <path class="s thin" d="M240 8v6M480 8v6M720 8v6"/>
+
+          <!-- FRONT VIEW -->
+          <g>
+            <path class="s obj draw" pathLength="1" style="--dur:1.4s" d="M110 120 H134 V170 H312 L314 172 V228 L312 230 H134 V280 H110 Z"/>
+            <path class="s thin draw" pathLength="1" style="--d:.8s" d="M312 170 V230"/>
+            <g class="fade" style="--d:1s">
+              <path class="s thin hid" d="M110 188 H314 M110 212 H314 M110 149.6 H134 M110 165.6 H134 M110 234.4 H134 M110 250.4 H134"/>
+              <path class="s thin ctr" d="M92 200 H330 M102 157.6 H142 M102 242.4 H142"/>
+            </g>
+          </g>
+          <!-- front dims -->
+          <g class="fade" style="--d:1.5s">
+            <path class="s thin" d="M106 120 H72 M106 280 H72 M110 284 V344 M134 284 V322 M316 234 V344 M318 170 H356 M318 230 H356"/>
+            <path class="s thin" marker-start="url(#bpA)" marker-end="url(#bpA)" d="M80 120 V280"/>
+            <text x="74" y="200" text-anchor="middle" transform="rotate(-90 74 200)">Ø80</text>
+            <path class="s thin" marker-start="url(#bpA)" marker-end="url(#bpA)" d="M110 316 H134"/>
+            <text x="122" y="310" text-anchor="middle">12</text>
+            <path class="s thin" marker-start="url(#bpA)" marker-end="url(#bpA)" d="M110 338 H316"/>
+            <text x="213" y="332" text-anchor="middle">102</text>
+            <path class="s thin" marker-start="url(#bpA)" marker-end="url(#bpA)" d="M350 170 V230"/>
+            <path class="s thin" d="M350 230 V244"/>
+            <path class="f" d="M344 244 H356 L350 236 Z"/>
+            <rect class="s thin" x="341" y="248" width="18" height="18"/><text x="350" y="261" text-anchor="middle">B</text>
+            <text x="360" y="194">Ø30 h6</text>
+            <g>
+              <rect class="s thin" x="360" y="202" width="22" height="18"/><rect class="s thin" x="382" y="202" width="44" height="18"/><rect class="s thin" x="426" y="202" width="18" height="18"/>
+              <path class="s" d="M365 216 H377 M371 216 V206" stroke-width="1.1"/>
+              <text x="404" y="215" text-anchor="middle">Ø0.05</text><text x="435" y="215" text-anchor="middle">A</text>
+            </g>
+            <!-- datum A on flange face -->
+            <path class="s thin" d="M110 116 V84"/>
+            <path class="f" d="M110 86 V98 L102 92 Z"/>
+            <path class="s thin" d="M102 92 H88"/>
+            <rect class="s thin" x="70" y="83" width="18" height="18"/><text x="79" y="96" text-anchor="middle">A</text>
+            <!-- chamfer -->
+            <path class="s thin" d="M313 171 L292 148 H252"/>
+            <text x="252" y="144">1 × 45°</text>
+            <text x="213" y="372" text-anchor="middle" letter-spacing=".08em">FRONT VIEW</text>
+          </g>
+
+          <!-- RIGHT VIEW -->
+          <g>
+            <circle class="s obj draw" pathLength="1" style="--d:.3s;--dur:1.3s" cx="520" cy="200" r="80"/>
+            <circle class="s obj draw" pathLength="1" style="--d:.6s" cx="520" cy="200" r="30"/>
+            <circle class="s thin draw" pathLength="1" style="--d:.8s" cx="520" cy="200" r="28"/>
+            <circle class="s obj draw" pathLength="1" style="--d:.9s" cx="520" cy="200" r="12"/>
+            <g class="s obj">
+              <circle class="draw" pathLength="1" style="--d:1s" cx="477.6" cy="157.6" r="8"/>
+              <circle class="draw" pathLength="1" style="--d:1.1s" cx="562.4" cy="157.6" r="8"/>
+              <circle class="draw" pathLength="1" style="--d:1.2s" cx="562.4" cy="242.4" r="8"/>
+              <circle class="draw" pathLength="1" style="--d:1.3s" cx="477.6" cy="242.4" r="8"/>
+            </g>
+            <g class="fade" style="--d:1.2s">
+              <circle class="s thin ctr" cx="520" cy="200" r="60"/>
+              <path class="s thin ctr" d="M428 200 H612 M520 108 V292"/>
+              <path class="s thin" d="M471.6 157.6h12M477.6 151.6v12M556.4 157.6h12M562.4 151.6v12M556.4 242.4h12M562.4 236.4v12M471.6 242.4h12M477.6 236.4v12"/>
+            </g>
+          </g>
+          <g class="fade" style="--d:1.7s">
+            <!-- cutting plane A-A -->
+            <path class="s" stroke-width="2" stroke-dasharray="22 4 4 4" d="M599.2 120.8 L440.8 279.2"/>
+            <path class="s" stroke-width="1.2" marker-end="url(#bpA)" d="M599.2 120.8 L615 136.6"/>
+            <path class="s" stroke-width="1.2" marker-end="url(#bpA)" d="M440.8 279.2 L456.6 295"/>
+            <text x="622" y="150" font-size="12">A</text><text x="462" y="310" font-size="12">A</text>
+            <!-- hole callout + position FCF -->
+            <path class="s thin" d="M471.9 151.9 L446 116 H440"/>
+            <text x="436" y="112" text-anchor="end">4× Ø8 THRU</text>
+            <g>
+              <rect class="s thin" x="336" y="118" width="20" height="18"/><rect class="s thin" x="356" y="118" width="46" height="18"/><rect class="s thin" x="402" y="118" width="17" height="18"/><rect class="s thin" x="419" y="118" width="17" height="18"/>
+              <circle class="s" cx="346" cy="127" r="4" stroke-width="1"/><path class="s" d="M340 127h12M346 121v12" stroke-width="1"/>
+              <text x="362" y="131">Ø0.1</text><circle class="s" cx="393" cy="127" r="5" stroke-width=".9"/><text x="393" y="130" font-size="7.5" text-anchor="middle">M</text>
+              <text x="410.5" y="131" text-anchor="middle">A</text><text x="427.5" y="131" text-anchor="middle">B</text>
+            </g>
+            <!-- bore callout -->
+            <path class="s thin" d="M531 197 L604 176 H614"/>
+            <text x="618" y="180">Ø12 THRU</text>
+            <!-- bolt circle -->
+            <path class="s thin" d="M520 260 L556 304 H564"/>
+            <text x="568" y="308">Ø60 BC</text>
+            <text x="520" y="338" text-anchor="middle" letter-spacing=".08em">RIGHT VIEW</text>
+          </g>
+
+          <!-- SECTION A-A -->
+          <g class="fade" style="--d:1.4s">
+            <path fill="url(#bpHatch)" d="M720 120 H744 V132 H720 Z M720 268 H744 V280 H720 Z M720 148 H744 V170 H922 L924 172 V188 H720 Z M720 212 H924 V228 L922 230 H744 V252 H720 Z"/>
+          </g>
+          <g class="s obj">
+            <path class="draw" pathLength="1" style="--d:.5s" d="M720 120 H744 V132 H720 Z M720 268 H744 V280 H720 Z"/>
+            <path class="draw" pathLength="1" style="--d:.7s;--dur:1.3s" d="M720 148 H744 V170 H922 L924 172 V188 H720 Z"/>
+            <path class="draw" pathLength="1" style="--d:.9s;--dur:1.3s" d="M720 212 H924 V228 L922 230 H744 V252 H720 Z"/>
+          </g>
+          <g class="fade" style="--d:1.6s">
+            <path class="s thin" d="M922 172 V188 M922 212 V228"/>
+            <path class="s thin ctr" d="M708 200 H940 M712 140 H752 M712 260 H752"/>
+            <path class="s thin" marker-start="url(#bpA)" marker-end="url(#bpA)" d="M704 140 V260"/>
+            <text x="698" y="200" text-anchor="middle" transform="rotate(-90 698 200)">60</text>
+            <!-- surface finish on bearing journal -->
+            <path class="s" stroke-width="1" d="M828 170 L834 158 L846 136 H872 M828 170 L822 160 H830"/>
+            <text x="848" y="132">0.8</text>
+            <text x="822" y="316" text-anchor="middle" letter-spacing=".08em">SECTION A–A</text>
+          </g>
+
+          <!-- notes -->
+          <g class="fade" style="--d:1.9s">
+            <text x="24" y="398" letter-spacing=".06em">NOTES</text>
+            <text x="24" y="414">1. DIMENSIONS IN mm</text>
+            <text x="24" y="428">2. BREAK SHARP EDGES 0.2 MAX</text>
+            <text x="24" y="442">3. INTERPRET PER ASME Y14.5</text>
+          </g>
+
+          <!-- title block -->
+          <g class="fade" style="--d:.2s">
+            <rect class="s" x="640" y="364" width="304" height="80" stroke-width="1.2"/>
+            <path class="s thin" d="M640 384 H944 M640 404 H944 M640 424 H944 M752 384 V424 M852 384 V424"/>
+            <text x="648" y="378" font-size="8" opacity=".75">TITLE</text><text x="690" y="378" font-size="11" letter-spacing=".06em">FLANGED SHAFT</text>
+            <text x="648" y="398" font-size="8" opacity=".75">TYPE</text><text x="682" y="398">ILLUSTRATIVE</text>
+            <text x="760" y="398" font-size="8" opacity=".75">SCALE</text><text x="794" y="398">1:1</text>
+            <text x="860" y="398" font-size="8" opacity=".75">REV</text><text x="884" y="398">B</text>
+            <text x="648" y="418" font-size="8" opacity=".75">UNITS</text><text x="682" y="418">mm</text>
+            <text x="760" y="418" font-size="8" opacity=".75">PROJ</text>
+            <g class="s" stroke-width=".9"><path d="M796 409 L812 411.5 V418.5 L796 421 Z"/><circle cx="826" cy="415" r="6"/><circle cx="826" cy="415" r="2.8"/></g>
+            <text x="860" y="418" font-size="8" opacity=".75">SHEET</text><text x="894" y="418">1 / 1</text>
+            <text x="648" y="438" font-size="8" opacity=".75">TOL</text><text x="672" y="438">UNLESS NOTED ±0.1 · ANGLES ±0.5°</text>
+          </g>
+        </svg>
+        </div>
+      </figure>
+
+      <div class="mech-grid">
         <p><strong>The habits transfer.</strong> Unit checks, tolerance thinking, documented assumptions. A free-body diagram and a reconciliation harness are the same instinct: don't trust a result you haven't checked against the physics.</p>
         <p><strong>I've been your user.</strong> For teams building software that touches the physical world — robotics, manufacturing, CAD and simulation tooling — I'm the engineer on the other side of your product, and I can translate.</p>
         <p><strong>The proof is above.</strong> The SolidWorks project in my work list is the two sides meeting: AI agents driving real CAD through an MCP server I extended, generating VBA a machinist could read.</p>
         <p><strong>Requirements are a spec.</strong> Engineering taught me to turn a vague ask into testable design inputs before building. That's the same job as writing a good ticket.</p>
       </div>
-      <p class="mech-lede" style="margin-top: 18px; margin-bottom: 0;">See the work: <a href="cad-portfolio.pdf">CAD &amp; simulation portfolio (PDF)</a> — my CAE final project and flow studies.</p>
-    </section>
+      <p class="pdf-link"><span>See the work: <a href="cad-portfolio.pdf">CAD &amp; simulation portfolio (PDF)</a> — my CAE final project and flow studies.</span></p>
+    </div>
+  </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <dl class="facts">
-        <div><dt>Role</dt><dd>Software Engineer Intern, fintech</dd></div>
-        <div><dt>Education</dt><dd>BS Mechanical Engineering, Kennesaw State, May 2027</dd></div>
-        <div><dt>Location</dt><dd>Atlanta area — remote or on-site</dd></div>
-        <div><dt>Status</dt><dd class="ok">Open to full-time, 2027 — software or mechanical</dd></div>
-        <div><dt>Software</dt><dd>TypeScript, Next.js, Supabase, Claude agents</dd></div>
-        <div><dt>Mechanical</dt><dd>SolidWorks (VBA automation), AutoCAD, 3D printing</dd></div>
-      </dl>
-    </section>
+  <!-- ================= ABOUT ================= -->
+  <section class="sec" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <p class="kicker">03 / About</p>
+      <h2 id="about-title">Spec sheet</h2>
+      <div class="spec">
+        <div class="spec-head" aria-hidden="true"><span>cooper.lockridge</span><span>rev 2026.09</span></div>
+        <dl>
+          <div><dt>role</dt><dd>Software Engineer Intern, fintech</dd></div>
+          <div><dt>education</dt><dd>BS Mechanical Engineering, Kennesaw State, May 2027</dd></div>
+          <div><dt>location</dt><dd>Atlanta area — remote or on-site</dd></div>
+          <div><dt>status</dt><dd class="ok">Open to full-time, 2027 — software or mechanical</dd></div>
+          <div><dt>software</dt><dd>TypeScript, Next.js, Supabase, Claude agents</dd></div>
+          <div><dt>mechanical</dt><dd>SolidWorks (VBA automation), AutoCAD, 3D printing</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
 
-    <section id="how">
-      <h2>How I work</h2>
-      <div class="how">
-        <p><strong>Start with a premortem.</strong> Assume the plan already failed; find out why before committing.</p>
-        <p><strong>Verify at the seam.</strong> Two correct components can still be wrong where they meet. Call the deployed thing on real data.</p>
-        <p><strong>A green test suite is not evidence.</strong> An audit once found 11 real bugs behind 2,673 passing tests. Break the code, watch the test go red, restore it.</p>
-        <p><strong>Reproduce before shipping a hypothesis.</strong> Four wrong diagnostic PRs taught me this one. My bug-fix agent carries it as a hard gate.</p>
-        <p><strong>Make wrong answers loud.</strong> A system that can't be correct yet should warn, never guess.</p>
-        <p><strong>Write down what cost you a day.</strong> The same day is never lost twice.</p>
+  <div class="circuit-zone">
+    <svg class="circuit" viewBox="0 0 1200 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M0 140 H220 L260 180 H520 L560 140 H820"/><path d="M1200 90 H980 L940 130 H760"/>
+        <path d="M60 0 V300 L100 340 V560"/><path d="M1120 0 V240 L1080 280 V520 H940"/>
+        <path d="M0 420 H160 L200 460 H380"/><path d="M1200 640 H1040 L1000 600 H820 L780 640 H660"/>
+        <path d="M140 760 H300 L340 800 V960"/><path d="M1200 900 H1060 L1020 940 V1120"/>
+        <path d="M0 1080 H200 L240 1040 H460"/><path d="M1200 1260 H900 L860 1300 H640"/>
+        <path d="M80 1400 V1240 L120 1200 H300"/><path d="M1140 1400 V1340"/>
+      </g>
+      <g fill="currentColor">
+        <circle cx="820" cy="140" r="6"/><circle cx="760" cy="130" r="6"/><circle cx="100" cy="560" r="6"/><circle cx="940" cy="520" r="6"/><circle cx="380" cy="460" r="6"/><circle cx="660" cy="640" r="6"/><circle cx="340" cy="960" r="6"/><circle cx="1020" cy="1120" r="6"/><circle cx="460" cy="1040" r="6"/><circle cx="640" cy="1300" r="6"/><circle cx="300" cy="1200" r="6"/><circle cx="1140" cy="1340" r="6"/>
+      </g>
+    </svg>
+
+    <!-- ================= HOW I WORK ================= -->
+    <section class="sec" id="how" aria-labelledby="how-title">
+      <div class="wrap how-grid">
+        <div class="how-intro">
+          <p class="kicker">04 / How I work</p>
+          <h2 id="how-title">Six rules I actually follow</h2>
+          <p class="sec-lede">Each one cost me something to learn.</p>
+        </div>
+        <ol class="steps anim">
+          <li><span class="num" aria-hidden="true">01</span><div><h3>Start with a premortem.</h3><p>Assume the plan already failed; find out why before committing.</p></div></li>
+          <li><span class="num" aria-hidden="true">02</span><div><h3>Verify at the seam.</h3><p>Two correct components can still be wrong where they meet. Call the deployed thing on real data.</p></div></li>
+          <li><span class="num" aria-hidden="true">03</span><div><h3>A green test suite is not evidence.</h3><p>An audit once found 11 real bugs behind 2,673 passing tests. Break the code, watch the test go red, restore it.</p></div></li>
+          <li><span class="num" aria-hidden="true">04</span><div><h3>Reproduce before shipping a hypothesis.</h3><p>Four wrong diagnostic PRs taught me this one. My bug-fix agent carries it as a hard gate.</p></div></li>
+          <li><span class="num" aria-hidden="true">05</span><div><h3>Make wrong answers loud.</h3><p>A system that can't be correct yet should warn, never guess.</p></div></li>
+          <li><span class="num" aria-hidden="true">06</span><div><h3>Write down what cost you a day.</h3><p>The same day is never lost twice.</p></div></li>
+        </ol>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <h2>Contact</h2>
-      <p class="big">Tell me what you're building.</p>
-      <p class="note">Email is the fastest path. Say what "done" looks like and I'll respond with something useful.</p>
-      <div class="links">
-        <a class="pill" href="mailto:Cooperlockridge@gmail.com">Cooperlockridge@gmail.com</a>
-        <a class="textlink" href="https://www.linkedin.com/in/cooperlockridge">LinkedIn</a>
-        <a class="textlink" href="https://github.com/cooperlockridge">GitHub</a>
-        <a class="textlink" href="resume.pdf" download>Resume</a>
+    <!-- ================= CONTACT ================= -->
+    <section class="sec" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker">05 / Contact</p>
+          <h2 id="contact-title">Tell me what you're building.</h2>
+          <p class="contact-note">Email is the fastest path. Say what "done" looks like and I'll respond with something useful.</p>
+          <div class="cta">
+            <a class="btn primary" href="mailto:Cooperlockridge@gmail.com">Email me</a>
+            <button class="btn js-only" type="button" data-copy-email>Copy email</button>
+          </div>
+        </div>
+        <div class="term" role="group" aria-label="Contact details">
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>~/contact</span></div>
+          <div class="term-body">
+            <div class="row"><span class="cmdline"><span class="p">$</span> whoami --contact</span></div>
+            <div class="row"><span class="k">email</span><a href="mailto:Cooperlockridge@gmail.com">Cooperlockridge@gmail.com</a><button class="copy js-only" type="button" data-copy-email aria-label="Copy email address">copy</button></div>
+            <div class="row"><span class="k">linkedin</span><a href="https://www.linkedin.com/in/cooperlockridge">linkedin.com/in/cooperlockridge</a></div>
+            <div class="row"><span class="k">github</span><a href="https://github.com/cooperlockridge">github.com/cooperlockridge</a></div>
+            <div class="row"><span class="k">resume</span><a href="resume.pdf" download>resume.pdf</a></div>
+            <div class="row"><span class="k">cad</span><a href="cad-portfolio.pdf">cad-portfolio.pdf</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AGENTS ================= -->
+    <section class="sec" id="agents" aria-labelledby="agents-title">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker">06 / Agents</p>
+          <h2 id="agents-title">For AI agents</h2>
+          <p class="agents-copy">The facts on this page are also published in machine-readable formats, so an assistant or tool doesn't have to scrape the HTML. There's an MCP server too.</p>
+        </div>
+        <div class="term" role="group" aria-label="Agent endpoints">
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>~/agents</span></div>
+          <div class="term-body">
+            <div class="row"><span class="cmdline"><span class="p">$</span> curl <a href="https://cooperlockridge.com/llms.txt">https://cooperlockridge.com/llms.txt</a></span></div>
+            <div class="row"><span class="cmdline"><span class="p">$</span> curl <a href="https://cooperlockridge.com/profile.json">https://cooperlockridge.com/profile.json</a></span></div>
+            <div class="row"><span class="cmdline c"># MCP (Streamable HTTP): https://cooperlockridge.com/api/mcp</span></div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="titleblock">
+      <div><span>Title</span><b>cooperlockridge.com</b></div>
+      <div><span>Drawn</span><b>C.Lockridge</b></div>
+      <div><span>Rev</span><b>2026.09</b></div>
+      <div><span>Updated</span><b>2026-09</b></div>
+      <div><span>Notes</span><b>no framework · no build step</b></div>
+    </div>
+    <div class="foot-row">
+      <span>© 2026 Cooper Lockridge · <a href="#top">back to top ↑</a></span>
+      <span class="legend js-only" aria-label="Keyboard shortcuts"><span><kbd data-mod>⌘</kbd> <kbd>K</kbd> palette</span><span><kbd>/</kbd> search</span><span><kbd>j</kbd> <kbd>k</kbd> projects</span><span><kbd>?</kbd> shortcuts</span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="corner" aria-hidden="true">v2026.09 · 0 frameworks</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="palette" aria-label="Command palette">
+  <input class="pal-input" id="pal-input" type="text" role="combobox" aria-expanded="true" aria-controls="pal-list" aria-autocomplete="list" placeholder="Jump to a section or run a command…" autocomplete="off" spellcheck="false">
+  <ul class="pal-list" id="pal-list" role="listbox" aria-label="Commands"></ul>
+  <div class="pal-foot" aria-hidden="true"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> run</span><span><kbd>esc</kbd> close</span></div>
+</dialog>
+
+<dialog id="help" aria-labelledby="help-title">
+  <div class="help-body">
+    <h2 id="help-title">Keyboard shortcuts</h2>
+    <dl>
+      <div><dt><kbd data-mod>⌘</kbd> <kbd>K</kbd></dt><dd>Command palette</dd></div>
+      <div><dt><kbd>/</kbd></dt><dd>Command palette</dd></div>
+      <div><dt><kbd>j</kbd> / <kbd>k</kbd></dt><dd>Next / previous project</dd></div>
+      <div><dt><kbd>?</kbd></dt><dd>This sheet</dd></div>
+      <div><dt><kbd>esc</kbd></dt><dd>Close</dd></div>
+    </dl>
+    <form method="dialog"><button class="btn help-close" type="submit">Close</button></form>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var EMAIL = 'Cooperlockridge@gmail.com';
+  var isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent);
+  if (!isMac) document.querySelectorAll('[data-mod]').forEach(function (k) { k.textContent = 'Ctrl'; });
+
+  /* theme */
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  function currentTheme() { return root.getAttribute('data-theme') || (mq.matches ? 'light' : 'dark'); }
+  function syncThemeMeta() {
+    var bg = currentTheme() === 'light' ? '#fafaf9' : '#0a0a0b';
+    if (root.hasAttribute('data-theme')) document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.setAttribute('content', bg); });
+    var b = document.getElementById('theme-toggle');
+    if (b) b.setAttribute('aria-label', 'Switch to ' + (currentTheme() === 'light' ? 'dark' : 'light') + ' theme');
+  }
+  function toggleTheme() {
+    var next = currentTheme() === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeMeta();
+  }
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+  syncThemeMeta();
+
+  /* toast + copy */
+  var toastEl = document.getElementById('toast'), toastTimer;
+  function toast(msg) {
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 1800);
+  }
+  function fallbackCopy() {
+    try {
+      var ta = document.createElement('textarea'); ta.value = EMAIL; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+      var ok = document.execCommand('copy'); ta.remove(); return ok;
+    } catch (e) { return false; }
+  }
+  function copyEmail() {
+    var done = function (ok) { toast(ok ? 'Copied ✓' : EMAIL); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(EMAIL).then(function () { done(true); }, function () { done(fallbackCopy()); });
+    else done(fallbackCopy());
+  }
+  document.querySelectorAll('[data-copy-email]').forEach(function (b) { b.addEventListener('click', copyEmail); });
+
+  /* Atlanta time */
+  try {
+    var fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+    var tick = function () { var s = fmt.format(new Date()); document.querySelectorAll('[data-atl-time]').forEach(function (el) { el.textContent = s; }); };
+    tick(); setInterval(tick, 30000);
+  } catch (e) {}
+
+  /* in-view animations: draw once, loops only while visible */
+  var anims = document.querySelectorAll('.anim');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        en.target.classList.toggle('playing', en.isIntersecting);
+        if (en.isIntersecting) en.target.classList.add('in-view');
+      });
+    }, { threshold: 0.25 });
+    anims.forEach(function (el) { io.observe(el); });
+  } else anims.forEach(function (el) { el.classList.add('in-view', 'playing'); });
+
+  /* card spotlight */
+  document.querySelectorAll('.card').forEach(function (c) {
+    c.addEventListener('pointermove', function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--x', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--y', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* navigation helpers */
+  function go(sel) {
+    var el = document.querySelector(sel); if (!el) return;
+    el.scrollIntoView({ block: 'start' });
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+  }
+  function openUrl(u) { window.open(u, '_blank', 'noopener'); }
+  function download(u) { var a = document.createElement('a'); a.href = u; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); }
+
+  /* command palette */
+  var pal = document.getElementById('palette'), input = document.getElementById('pal-input'), list = document.getElementById('pal-list');
+  var cmds = [
+    { g: 'Jump to', l: 'Work', h: '01', run: function () { go('#work'); } },
+    { g: 'Jump to', l: 'Mechanical', h: '02', run: function () { go('#mechanical'); } },
+    { g: 'Jump to', l: 'About', h: '03', run: function () { go('#about'); } },
+    { g: 'Jump to', l: 'How I work', h: '04', run: function () { go('#how'); } },
+    { g: 'Jump to', l: 'Contact', h: '05', run: function () { go('#contact'); } },
+    { g: 'Jump to', l: 'View agent endpoints', h: '06', run: function () { go('#agents'); } },
+    { g: 'Actions', l: 'Copy email', h: EMAIL, run: copyEmail },
+    { g: 'Actions', l: 'Open GitHub', h: 'github.com', run: function () { openUrl('https://github.com/cooperlockridge'); } },
+    { g: 'Actions', l: 'Open LinkedIn', h: 'linkedin.com', run: function () { openUrl('https://www.linkedin.com/in/cooperlockridge'); } },
+    { g: 'Actions', l: 'Download resume', h: 'PDF', run: function () { download('resume.pdf'); } },
+    { g: 'Actions', l: 'Open CAD portfolio', h: 'PDF', run: function () { openUrl('cad-portfolio.pdf'); } },
+    { g: 'Actions', l: 'Toggle theme', h: 'light / dark', run: toggleTheme }
+  ];
+  var shown = [], sel = 0;
+  function render() {
+    var q = input.value.trim().toLowerCase();
+    shown = cmds.filter(function (c) { return !q || (c.l + ' ' + c.g + ' ' + c.h).toLowerCase().indexOf(q) !== -1; });
+    if (sel >= shown.length) sel = shown.length - 1; if (sel < 0) sel = 0;
+    list.textContent = '';
+    if (!shown.length) { var e = document.createElement('li'); e.className = 'pal-empty'; e.setAttribute('role', 'presentation'); e.textContent = 'No matches.'; list.appendChild(e); input.removeAttribute('aria-activedescendant'); return; }
+    var lastG = '';
+    shown.forEach(function (c, i) {
+      if (c.g !== lastG) { lastG = c.g; var g = document.createElement('li'); g.className = 'pal-group'; g.setAttribute('role', 'presentation'); g.textContent = c.g; list.appendChild(g); }
+      var li = document.createElement('li'); li.className = 'pal-item'; li.id = 'pal-opt-' + i; li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', i === sel ? 'true' : 'false');
+      var s = document.createElement('span'); s.textContent = c.l; var sm = document.createElement('small'); sm.textContent = c.h;
+      li.appendChild(s); li.appendChild(sm);
+      li.addEventListener('mousemove', function () { if (sel !== i) { sel = i; mark(); } });
+      li.addEventListener('click', function () { run(i); });
+      list.appendChild(li);
+    });
+    mark();
+  }
+  function mark() {
+    list.querySelectorAll('.pal-item').forEach(function (li) { li.setAttribute('aria-selected', li.id === 'pal-opt-' + sel ? 'true' : 'false'); });
+    input.setAttribute('aria-activedescendant', 'pal-opt-' + sel);
+    var cur = document.getElementById('pal-opt-' + sel); if (cur) cur.scrollIntoView({ block: 'nearest' });
+  }
+  function run(i) { var c = shown[i]; if (!c) return; pal.close(); c.run(); }
+  function openPal() { if (pal.open) return; input.value = ''; sel = 0; render(); pal.showModal(); input.focus(); }
+  input.addEventListener('input', function () { sel = 0; render(); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (shown.length) { sel = (sel + 1) % shown.length; mark(); } }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (shown.length) { sel = (sel - 1 + shown.length) % shown.length; mark(); } }
+    else if (e.key === 'Enter') { e.preventDefault(); run(sel); }
+    else if (e.key === 'Tab') { e.preventDefault(); }
+  });
+  pal.addEventListener('click', function (e) { if (e.target === pal) pal.close(); });
+  document.getElementById('open-palette').addEventListener('click', openPal);
+
+  var help = document.getElementById('help');
+  help.addEventListener('click', function (e) { if (e.target === help) help.close(); });
+
+  /* j / k between projects */
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.bento > .proj'));
+  function stepProject(dir) {
+    var idx = projects.indexOf(document.activeElement), next;
+    if (idx === -1) {
+      var tops = projects.map(function (p) { return p.getBoundingClientRect().top; });
+      if (dir > 0) { next = tops.findIndex(function (t) { return t > 90; }); if (next === -1) next = projects.length - 1; }
+      else { next = -1; tops.forEach(function (t, i) { if (t < 70) next = i; }); if (next === -1) next = 0; }
+    } else next = Math.max(0, Math.min(projects.length - 1, idx + dir));
+    var p = projects[next]; p.scrollIntoView({ block: 'start' }); p.focus({ preventScroll: true });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if ((e.metaKey || e.ctrlKey) && !e.altKey && k && k.toLowerCase() === 'k') { e.preventDefault(); if (pal.open) pal.close(); else { if (help.open) help.close(); openPal(); } return; }
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
+    var t = e.target;
+    if (t && t.closest && t.closest('input, textarea, select, [contenteditable="true"]')) return;
+    if (document.querySelector('dialog[open]')) return;
+    if (k === '/') { e.preventDefault(); openPal(); }
+    else if (k === '?') { e.preventDefault(); help.showModal(); }
+    else if (k === 'j' || k === 'k') { e.preventDefault(); stepProject(k === 'j' ? 1 : -1); }
+  });
+})();
+</script>
 </body>
 </html>

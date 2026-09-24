@@ -1,0 +1,198 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Cooper Lockridge",
+    "label": "Software Engineer Intern; BS Mechanical Engineering student",
+    "email": "Cooperlockridge@gmail.com",
+    "url": "https://cooperlockridge.com",
+    "summary": "Software engineer intern at a fintech company and mechanical engineering senior at Kennesaw State. Directs AI coding agents to ship production software and audits what they produce. Open to full-time roles starting 2027, software or mechanical; remote or on-site.",
+    "location": {
+      "city": "Atlanta area",
+      "region": "GA",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "cooperlockridge",
+        "url": "https://github.com/cooperlockridge"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "cooperlockridge",
+        "url": "https://www.linkedin.com/in/cooperlockridge"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Northstar Mortgage Advisors",
+      "position": "Software Engineer Intern",
+      "location": "Remote/Hybrid",
+      "startDate": "2025-04",
+      "summary": "Software engineering on internal production platforms at a mortgage/fintech company.",
+      "highlights": [
+        "Shipped 413 merged pull requests in a 12-week span across two production Next.js/TypeScript applications; the largest single contributor to the internal platform used daily by ~40 loan officers.",
+        "Built a dual-engine mortgage pricing calculator and a reconciliation harness validating every payment and closing-cost line against the loan origination system; root-caused 12 systemic defects to reach 100% reconciliation across a 108-loan production corpus.",
+        "Designed and launched a multi-tenant SaaS portal for external homebuilder partners: subdomain tenancy, fail-closed database-level isolation, live rate pricing, e-signature contract pipeline; grew its test suite from 0 to 2,925 in six weeks.",
+        "Built a remote MCP server exposing 46 OAuth-authenticated tools with audit logging and rate limiting; refactored the auth layer across 39 routes to accept machine tokens as first-class credentials.",
+        "Built the company's software factory: an AI agent pipeline that takes employee bug reports, reproduces them, writes and tests fixes, and opens pull requests for human review. First six reports produced five merged PRs, four same-day, deploying to production in ~3 minutes."
+      ]
+    },
+    {
+      "name": "Best Buy",
+      "position": "Product Flow Specialist",
+      "location": "Hiram, GA",
+      "startDate": "2022-10",
+      "endDate": "2024-12",
+      "highlights": [
+        "Organized merchandise flow and implemented new receiving procedures that sped up intake, stocking, and order fulfillment."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Kennesaw State University",
+      "area": "Mechanical Engineering",
+      "studyType": "Bachelor of Science",
+      "endDate": "2027-05",
+      "courses": [
+        "Machine dynamics",
+        "Thermodynamics",
+        "Heat transfer",
+        "Strength of materials"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Software Factory",
+      "description": "Any employee clicks Feedback; an agent reproduces the bug, fixes it, and opens a pull request. A human decides what ships.",
+      "highlights": [
+        "Pipeline: feedback, reproduce, fix + test, human review, production. No reproduction means no fix.",
+        "First six reports produced five merged PRs, four the same day, deploying to production in about 3 minutes.",
+        "Bug reports are treated as untrusted text; the pipeline is hardened against prompt injection and fails closed."
+      ],
+      "keywords": [
+        "Claude agents",
+        "Node",
+        "GitHub"
+      ],
+      "url": "https://cooperlockridge.com/#work"
+    },
+    {
+      "name": "Siege",
+      "description": "A Claude skill that turns code review into a multi-agent gauntlet: 41 agents, three adversarial passes, two fixers.",
+      "highlights": [
+        "Stages: 20-agent sweep, 8 verify, fixer, 4 adversarial, 8 verify, fixer, ship.",
+        "Nothing ships on one model's opinion."
+      ],
+      "keywords": [
+        "Claude skill",
+        "Multi-agent pipeline"
+      ],
+      "url": "https://cooperlockridge.com/#work"
+    },
+    {
+      "name": "Restaurant Time Clock & Payroll",
+      "description": "Co-built and deployed a time-clock and payroll product a barbecue restaurant (real paying client) runs payroll on.",
+      "highlights": [
+        "PIN-entry employee terminal with device enrollment, multi-rate and salaried pay, overtime on combined weekly totals.",
+        "Byte-deterministic Excel exports matching the payroll processor's 18-column template.",
+        "226-test suite with an approve-and-lock invariant: the export file exists if and only if an approved pay period does.",
+        "Commissioned adversarial AI audits that surfaced ~20 real bugs; 16 fixed."
+      ],
+      "keywords": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Vitest"
+      ],
+      "url": "https://cooperlockridge.com/#work"
+    },
+    {
+      "name": "Personal Finance Dashboard",
+      "description": "A weekly paycheck allocator built for one real user, splitting take-home pay into editable budget envelopes.",
+      "highlights": [
+        "Domain model strictly separates pre-tax and post-tax dollars, so tax math and budget math cannot contaminate each other."
+      ],
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "url": "https://cooperlockridge.com/#work"
+    },
+    {
+      "name": "SolidWorks, driven by AI",
+      "description": "Extended an open-source MCP server so Claude can drive SolidWorks: modeling, drawings, batch export.",
+      "highlights": [
+        "Part and sketch modeling, drawing creation with dimensions and section views, template application, batch export.",
+        "Drives SolidWorks from Claude through its VBA macro layer, generating macros for repetitive modeling and drawing work."
+      ],
+      "keywords": [
+        "Open-source MCP server",
+        "SolidWorks",
+        "VBA"
+      ],
+      "url": "https://cooperlockridge.com/#work"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web",
+      "keywords": [
+        "Next.js 15/16",
+        "React 19",
+        "TypeScript (strict)",
+        "Tailwind CSS",
+        "Node.js",
+        "Bun"
+      ]
+    },
+    {
+      "name": "Platform",
+      "keywords": [
+        "Supabase/PostgreSQL (RLS, migrations)",
+        "Clerk (OAuth, multi-tenant orgs)",
+        "Vercel",
+        "GitHub Actions",
+        "BigQuery",
+        "REST/JSON:API"
+      ]
+    },
+    {
+      "name": "AI tooling",
+      "keywords": [
+        "Claude Code and agent orchestration",
+        "MCP servers and clients",
+        "Adversarial AI code review",
+        "Prompt-injection hardening"
+      ]
+    },
+    {
+      "name": "Mechanical",
+      "keywords": [
+        "SolidWorks (VBA automation)",
+        "AutoCAD",
+        "3D printing",
+        "Reverse engineering"
+      ]
+    },
+    {
+      "name": "Mechanical coursework",
+      "keywords": [
+        "Machine dynamics",
+        "Thermodynamics",
+        "Heat transfer",
+        "Strength of materials"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://cooperlockridge.com/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-09-23"
+  }
+}

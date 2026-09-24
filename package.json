@@ -1,0 +1,13 @@
+{
+  "name": "cooperlockridge-portfolio",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.1.0",
+    "mcp-handler": "2.2.0",
+    "zod": "4.6.5"
+  }
+}

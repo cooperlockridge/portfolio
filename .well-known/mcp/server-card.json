@@ -1,0 +1,22 @@
+{
+  "$comment": "Pre-standard MCP server card. The .well-known/mcp discovery format is not finalized; fields may change.",
+  "name": "cooperlockridge-portfolio",
+  "title": "Cooper Lockridge portfolio",
+  "version": "1.0.0",
+  "description": "Read-only MCP server exposing Cooper Lockridge's resume, projects, contact details, and availability.",
+  "homepage": "https://cooperlockridge.com/",
+  "endpoint": "https://cooperlockridge.com/api/mcp",
+  "transport": "streamable-http",
+  "stateless": true,
+  "authentication": { "type": "none" },
+  "capabilities": { "tools": {} },
+  "tools": [
+    { "name": "get_profile_summary", "description": "Headline, current role, education, location, availability, key numbers, and links.", "readOnly": true },
+    { "name": "get_resume_section", "description": "One JSON Resume 1.0.0 section: basics, work, education, projects, or skills.", "readOnly": true },
+    { "name": "list_projects", "description": "Portfolio projects with id, name, one-line description, stack, and status.", "readOnly": true },
+    { "name": "get_project", "description": "Details for one project by id.", "readOnly": true },
+    { "name": "get_contact_info", "description": "Email, website, GitHub, and LinkedIn.", "readOnly": true },
+    { "name": "get_availability", "description": "Job-search status, start timing, role types, work arrangement, and location.", "readOnly": true }
+  ],
+  "lastUpdated": "2026-09-23"
+}

@@ -1,0 +1,23 @@
+# Cooper Lockridge
+
+> Software engineer intern (Northstar Mortgage Advisors) and mechanical engineering student at Kennesaw State University (BS expected May 2027), based in the Atlanta area. Builds production software with AI coding agents and verifies what they produce.
+
+Open to full-time roles starting 2027, software or mechanical; remote or on-site. Work includes an AI agent pipeline that turns employee bug reports into reviewed pull requests, a multi-agent code review skill, a payroll product for a paying restaurant client, a personal finance dashboard, and AI-driven SolidWorks automation over MCP. Contact: Cooperlockridge@gmail.com.
+
+## Profile
+
+- [Portfolio page as Markdown](https://cooperlockridge.com/index.md): full site content, including projects, mechanical background, and working principles
+- [resume.json](https://cooperlockridge.com/resume.json): resume in JSON Resume 1.0.0 format
+- [profile.json](https://cooperlockridge.com/profile.json): compact summary with availability, key numbers, projects, and skills
+- [Resume (PDF)](https://cooperlockridge.com/resume.pdf): one-page resume
+- [CAD & simulation portfolio (PDF)](https://cooperlockridge.com/cad-portfolio.pdf): CAE final project, flow studies, and self-modeled parts
+
+## Agents
+
+- [MCP server](https://cooperlockridge.com/api/mcp): remote MCP endpoint, Streamable HTTP, stateless, read-only tools, no auth. Tools: get_profile_summary, get_resume_section, list_projects, get_project, get_contact_info, get_availability
+- [MCP server card](https://cooperlockridge.com/.well-known/mcp/server-card.json): static description of the MCP server (pre-standard format)
+
+## Links
+
+- [GitHub](https://github.com/cooperlockridge)
+- [LinkedIn](https://www.linkedin.com/in/cooperlockridge)
