@@ -50,7 +50,7 @@ Stages: 20 sweep → 8 verify → fixer → 4 adversarial → 8 verify → fixer
 
 *In production. Next.js 16, TypeScript, Supabase, Clerk, Bun*
 
-A multi-tenant platform where a lender's home-builder partners price forward commitments and e-sign term sheets. Every request is tenant-checked before it touches data, and CI fails if the test count ever drops. 12,040 tests; I shipped 251 of its 282 merged PRs.
+A multi-tenant platform where a lender's home-builder partners price forward commitments and e-sign term sheets. Every request is tenant-checked before it touches data. I shipped 251 of its 282 merged PRs.
 
 ### Personal Finance Dashboard
 
