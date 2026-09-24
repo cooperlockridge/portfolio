@@ -2,7 +2,7 @@
 
 > Software engineer intern (Northstar Mortgage Advisors) and mechanical engineering student at Kennesaw State University (BS expected May 2027), based in the Atlanta area. Builds production software with AI coding agents and verifies what they produce.
 
-Open to full-time roles starting 2027, software or mechanical; remote or on-site. Work includes an AI agent pipeline that turns employee bug reports into reviewed pull requests, a multi-agent code review skill, a payroll product for a paying restaurant client, a personal finance dashboard, and AI-driven SolidWorks automation over MCP. Contact: Cooperlockridge@gmail.com.
+Open to full-time roles starting 2027, software or mechanical; remote or on-site. Work includes an AI agent pipeline that turns employee bug reports into reviewed pull requests, a multi-agent code review skill, a multi-tenant B2B portal for a lender's home-builder partners, a personal finance dashboard, and AI-driven SolidWorks automation over MCP. Contact: Cooperlockridge@gmail.com.
 
 ## Profile
 

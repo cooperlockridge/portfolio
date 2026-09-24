@@ -106,7 +106,7 @@ for (const section of ["basics", "work", "education", "projects", "skills"]) {
   await call("get_resume_section", { section }, (d) => assert.ok(d && (Array.isArray(d) ? d.length : d.name)));
 }
 await call("list_projects", {}, (d) => assert.equal(d.length, 5));
-for (const pid of ["software-factory", "siege", "restaurant-time-clock-payroll", "personal-finance-dashboard", "solidworks-ai"]) {
+for (const pid of ["software-factory", "siege", "builder-portal", "personal-finance-dashboard", "solidworks-ai"]) {
   await call("get_project", { id: pid }, (d) => {
     assert.equal(d.id, pid);
     assert.ok(d.highlights.length > 0);

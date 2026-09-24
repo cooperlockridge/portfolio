@@ -39,8 +39,8 @@
       "label": "merged PRs, counted from GitHub"
     },
     {
-      "value": "2,925",
-      "label": "tests, from zero in six weeks"
+      "value": "12,040",
+      "label": "tests behind a monotonic CI floor"
     },
     {
       "value": "46",
@@ -74,16 +74,17 @@
       "status": "Built"
     },
     {
-      "id": "restaurant-time-clock-payroll",
-      "name": "Restaurant Time Clock & Payroll",
-      "oneLine": "Co-built and deployed a time-clock and payroll product a barbecue restaurant (real paying client) runs payroll on.",
+      "id": "builder-portal",
+      "name": "Builder Partner Portal",
+      "oneLine": "Multi-tenant B2B platform for a lender's home-builder partners: forward-commitment pricing, e-signed term sheets, and payment flyers.",
       "stack": [
-        "Next.js",
+        "Next.js 16",
         "TypeScript",
         "Supabase",
-        "Vitest"
+        "Clerk",
+        "Bun"
       ],
-      "status": "In production for a paying client"
+      "status": "In production"
     },
     {
       "id": "personal-finance-dashboard",

@@ -34,7 +34,7 @@
       "highlights": [
         "Shipped 413 merged pull requests in a 12-week span across two production Next.js/TypeScript applications; the largest single contributor to the internal platform used daily by ~40 loan officers.",
         "Built a dual-engine mortgage pricing calculator and a reconciliation harness validating every payment and closing-cost line against the loan origination system; root-caused 12 systemic defects to reach 100% reconciliation across a 108-loan production corpus.",
-        "Designed and launched a multi-tenant SaaS portal for external homebuilder partners: subdomain tenancy, fail-closed database-level isolation, live rate pricing, e-signature contract pipeline; grew its test suite from 0 to 2,925 in six weeks.",
+        "Largest contributor (251 of 282 merged PRs) to a multi-tenant B2B portal for external home-builder partners: per-request tenant resolution with org-bound membership checks, live rate pricing, and an e-signature contract pipeline; the suite, guarded by a monotonic CI test floor, is at 12,040 tests.",
         "Built a remote MCP server exposing 46 OAuth-authenticated tools with audit logging and rate limiting; refactored the auth layer across 39 routes to accept machine tokens as first-class credentials.",
         "Built the company's software factory: an AI agent pipeline that takes employee bug reports, reproduces them, writes and tests fixes, and opens pull requests for human review. First six reports produced five merged PRs, four same-day, deploying to production in ~3 minutes."
       ]
@@ -94,19 +94,20 @@
       "url": "https://cooperlockridge.com/#work"
     },
     {
-      "name": "Restaurant Time Clock & Payroll",
-      "description": "Co-built and deployed a time-clock and payroll product a barbecue restaurant (real paying client) runs payroll on.",
+      "name": "Builder Partner Portal",
+      "description": "Multi-tenant B2B platform for a lender's home-builder partners: forward-commitment pricing, e-signed term sheets, and payment flyers.",
       "highlights": [
-        "PIN-entry employee terminal with device enrollment, multi-rate and salaried pay, overtime on combined weekly totals.",
-        "Byte-deterministic Excel exports matching the payroll processor's 18-column template.",
-        "226-test suite with an approve-and-lock invariant: the export file exists if and only if an approved pay period does.",
-        "Commissioned adversarial AI audits that surfaced ~20 real bugs; 16 fixed."
+        "Realtors, builder staff, and internal staff share one identity layer. Largest contributor: 251 of 282 merged PRs.",
+        "Tenancy is resolved per request from the route, bound to an auth org, and membership-checked before any data is read; anything unproven gets a 403. Unknown and real tenants return identical responses, so the tenant list can't be enumerated.",
+        "Signing runs as an event pipeline: embedded invites, a completion webhook, and a reconciler cron that heals missed callbacks.",
+        "CI enforces a monotonic test floor: the build fails if the pass count or file count ever drops. 12,040 tests."
       ],
       "keywords": [
-        "Next.js",
+        "Next.js 16",
         "TypeScript",
         "Supabase",
-        "Vitest"
+        "Clerk",
+        "Bun"
       ],
       "url": "https://cooperlockridge.com/#work"
     },

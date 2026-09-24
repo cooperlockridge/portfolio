@@ -22,7 +22,7 @@ Numbers I can prove, from production systems:
 | Number | What it counts |
 | --- | --- |
 | 467 | merged PRs, counted live from GitHub |
-| 2,925 | tests, from zero in six weeks |
+| 12,040 | tests behind a monotonic CI floor |
 | 46 | tools on an MCP server I built |
 | ~3 min | PR approval to production |
 
@@ -46,11 +46,13 @@ A skill that turns review into a gauntlet: 41 agents, three adversarial passes, 
 
 Stages: 20 sweep → 8 verify → fixer → 4 adversarial → 8 verify → fixer → ship.
 
-### Restaurant Time Clock & Payroll
+### Builder Partner Portal
 
-*Real paying client. Next.js, TypeScript, Supabase*
+*In production. Next.js 16, TypeScript, Supabase, Clerk, Bun*
 
-A barbecue restaurant runs payroll on this: PIN-entry terminal, overtime rules, and Excel exports that match the payroll processor's template byte for byte. 226 tests, and one invariant I'm fond of: the export file exists if and only if an approved pay period does.
+Multi-tenant B2B platform for a lender's home-builder partners: forward-commitment pricing, e-signed term sheets, and payment flyers. Realtors, builder staff and internal staff share one identity layer. Largest contributor: 251 of 282 merged PRs.
+
+Tenancy is resolved per request from the route, bound to an auth org, and membership-checked before any data is read. Anything unproven gets a 403. Unknown and real tenants return identical responses, so the tenant list can't be enumerated. Signing runs as an event pipeline: embedded invites, a completion webhook, and a reconciler cron that heals missed callbacks. CI enforces a monotonic test floor, so the build fails if the pass count or file count ever drops. 12,040 tests, and the number only goes up.
 
 ### Personal Finance Dashboard
 

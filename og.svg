@@ -17,7 +17,7 @@
   </g>
   <g font-family="Geist Mono, ui-monospace, Menlo, Consolas, monospace">
     <line x1="72" y1="430" x2="1128" y2="430" stroke="#ffffff1f"/>
-    <g font-size="44" fill="#ededed"><text x="72" y="498">467</text><text x="332" y="498">2,925</text><text x="612" y="498">46</text><text x="852" y="498">~3 min</text></g>
+    <g font-size="44" fill="#ededed"><text x="72" y="498">467</text><text x="332" y="498">12,040</text><text x="612" y="498">46</text><text x="852" y="498">~3 min</text></g>
     <g font-size="18" fill="#a1a1aa"><text x="72" y="532">merged PRs</text><text x="332" y="532">tests</text><text x="612" y="532">MCP tools</text><text x="852" y="532">approval → prod</text></g>
     <text x="72" y="590" font-size="18" fill="#a1a1aa">cooperlockridge.com · Atlanta area · open to 2027 roles</text>
   </g>

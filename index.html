@@ -10,7 +10,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Cooper Lockridge">
 <meta property="og:title" content="Cooper Lockridge — I build software with AI agents, then prove it right.">
-<meta property="og:description" content="Software engineer intern (fintech) and ME senior at Kennesaw State. 467 merged PRs, 2,925 tests, a 46-tool MCP server, ~3 min from approval to production.">
+<meta property="og:description" content="Software engineer intern (fintech) and ME senior at Kennesaw State. 467 merged PRs, 12,040 tests, a 46-tool MCP server, ~3 min from approval to production.">
 <meta property="og:url" content="https://cooperlockridge.com/">
 <meta property="og:image" content="https://cooperlockridge.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -283,8 +283,6 @@
   .sweep { transform-box: view-box; transform-origin: 200px 150px; }
   .js .sweep { opacity: 0; }
   .js .in-view .sweep { opacity: 1; animation: spin 1.3s linear .2s 3 both, fadeout .5s ease 4.1s forwards; }
-  .hand { transform-box: view-box; transform-origin: 74px 96px; }
-  .js .in-view .hand { animation: spin 2.4s cubic-bezier(.4, 0, .2, 1) both; }
 
   /* ---------- mechanical ---------- */
   .bp { margin-top: 40px; border-radius: 16px; overflow: hidden; border: 1px solid color-mix(in oklab, var(--bp-ink) 35%, transparent); background: var(--bp-bg); color: var(--bp-ink); }
@@ -498,7 +496,7 @@
 
       <ul class="numbers" aria-label="Numbers from production systems">
         <li><span class="n">467</span><span class="l">merged PRs, counted live from GitHub</span></li>
-        <li><span class="n">2,925</span><span class="l">tests, from zero in six weeks</span></li>
+        <li><span class="n">12,040</span><span class="l">tests behind a monotonic CI floor</span></li>
         <li><span class="n">46</span><span class="l">tools on an MCP server I built</span></li>
         <li><span class="n">~3 min</span><span class="l">PR approval to production</span></li>
       </ul>
@@ -606,57 +604,53 @@
           </div>
         </article>
 
-        <!-- 03 Time Clock -->
-        <article class="card proj" id="time-clock" tabindex="-1" aria-labelledby="tc-title">
-          <div class="proj-top"><span class="kicker plain">Project / 03</span><span class="badge">Real paying client</span></div>
-          <h3 id="tc-title">Restaurant Time Clock &amp; Payroll</h3>
-          <ul class="chips" aria-label="Stack"><li>Next.js</li><li>TypeScript</li><li>Supabase</li></ul>
+        <!-- 03 Builder Partner Portal -->
+        <article class="card proj" id="builder-portal" tabindex="-1" aria-labelledby="bp-title">
+          <div class="proj-top"><span class="kicker plain">Project / 03</span><span class="badge">In production</span></div>
+          <h3 id="bp-title">Builder Partner Portal</h3>
+          <ul class="chips" aria-label="Stack"><li>Next.js 16</li><li>TypeScript</li><li>Supabase</li><li>Clerk</li><li>Bun</li></ul>
           <div class="body">
-            <p>A barbecue restaurant runs payroll on this: PIN-entry terminal, overtime rules, and Excel exports
-            that match the payroll processor's template byte for byte. <strong>226 tests</strong>, and one invariant I'm fond of:
-            the export file exists if and only if an approved pay period does.</p>
+            <p>Multi-tenant B2B platform for a lender's home-builder partners: forward-commitment pricing, e-signed term
+            sheets, and payment flyers. Realtors, builder staff and internal staff share one identity layer.
+            Largest contributor: <strong>251 of 282 merged PRs</strong>.</p>
+            <p>Tenancy is resolved per request from the route, bound to an auth org, and membership-checked before any data
+            is read. Anything unproven gets a 403. Unknown and real tenants return identical responses, so the tenant list
+            can't be enumerated. Signing runs as an event pipeline: embedded invites, a completion webhook, and a reconciler
+            cron that heals missed callbacks. CI enforces a monotonic test floor, so the build fails if the pass count or
+            file count ever drops. <strong>12,040 tests</strong>, and the number only goes up.</p>
           </div>
           <div class="fig anim">
             <svg viewBox="0 0 400 200" role="img" aria-labelledby="figD-t">
-              <title id="figD-t">A clock face feeds rows into a payroll ledger; the export.xlsx file is locked in only when the pay period is approved.</title>
-              <circle class="ln" cx="74" cy="96" r="54"/>
-              <path class="ln-s" stroke-width="1.2" d="M74.0 54.0L74.0 44.0 M97.0 56.2L100.0 51.0 M113.8 73.0L119.0 70.0 M116.0 96.0L126.0 96.0 M113.8 119.0L119.0 122.0 M97.0 135.8L100.0 141.0 M74.0 138.0L74.0 148.0 M51.0 135.8L48.0 141.0 M34.2 119.0L29.0 122.0 M32.0 96.0L22.0 96.0 M34.2 73.0L29.0 70.0 M51.0 56.2L48.0 51.0"/>
-              <path d="M74 96 L52 82" stroke="var(--text)" stroke-width="2.2" stroke-linecap="round"/>
-              <path class="hand" d="M74 96 L74 52" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle class="txt-f" cx="74" cy="96" r="3"/>
-              <text class="t" x="74" y="170" font-size="10" text-anchor="middle">PIN clock-in</text>
-              <path class="ln-s" d="M140 96 H158 m-5 -4 5 4 -5 4" stroke-width="1.2"/>
-              <g>
-                <rect class="box-bg" x="166" y="30" width="136" height="132" rx="8"/>
-                <g class="t" font-size="9"><text x="176" y="47">emp</text><text x="216" y="47">reg</text><text x="252" y="47">ot</text><text x="280" y="47">Σ</text></g>
-                <path class="ln" d="M166 54 H302 M166 76 H302 M166 98 H302 M166 120 H302 M166 142 H302"/>
-                <g class="mut-f" opacity=".55">
-                  <rect class="grow" style="--d:.9s" x="176" y="61" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.0s" x="216" y="61" width="26" height="8" rx="2"/><rect class="grow" style="--d:1.1s" x="252" y="61" width="12" height="8" rx="2"/>
-                  <rect class="grow" style="--d:1.2s" x="176" y="83" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.3s" x="216" y="83" width="30" height="8" rx="2"/><rect class="grow" style="--d:1.4s" x="252" y="83" width="6" height="8" rx="2"/>
-                  <rect class="grow" style="--d:1.5s" x="176" y="105" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.6s" x="216" y="105" width="22" height="8" rx="2"/>
-                  <rect class="grow" style="--d:1.7s" x="176" y="127" width="28" height="8" rx="2"/><rect class="grow" style="--d:1.8s" x="216" y="127" width="30" height="8" rx="2"/><rect class="grow" style="--d:1.9s" x="252" y="127" width="16" height="8" rx="2"/>
-                </g>
-                <g class="txt-f"><rect class="grow" style="--d:1.2s" x="280" y="61" width="14" height="8" rx="2"/><rect class="grow" style="--d:1.5s" x="280" y="83" width="14" height="8" rx="2"/><rect class="grow" style="--d:1.7s" x="280" y="105" width="12" height="8" rx="2"/><rect class="grow" style="--d:2.0s" x="280" y="127" width="14" height="8" rx="2"/></g>
-                <text class="t" x="234" y="156" font-size="9" text-anchor="middle">pay period</text>
+              <title id="figD-t">Requests from two tenants pass a guard that checks org binding and membership before reaching scoped tenant data; a request for an unknown tenant is rejected with a 403. A test-floor counter at 12,040 steps only upward.</title>
+              <g font-size="10" text-anchor="middle">
+                <rect class="box" x="12" y="34" width="96" height="28" rx="6"/><text class="t-hi" x="60" y="52">tenant A</text>
+                <rect class="box" x="12" y="84" width="96" height="28" rx="6"/><text class="t-hi" x="60" y="102">tenant B</text>
+                <rect class="box-bg wn" x="12" y="134" width="96" height="28" rx="6" stroke-dasharray="4 3"/><text class="t-wn" x="60" y="152">unknown</text>
               </g>
-              <g class="fade" style="--d:2.3s">
-                <rect class="nof ac" x="182" y="16" width="104" height="18" rx="4" transform="rotate(-4 234 25)"/>
-                <text class="t-ac" x="234" y="29" font-size="10" text-anchor="middle" transform="rotate(-4 234 25)">✓ APPROVED</text>
+              <path class="ln-s draw" pathLength="1" style="--d:.1s" d="M108 48 C132 48 130 84 150 84"/>
+              <path class="ln-s draw" pathLength="1" style="--d:.2s" d="M108 98 H150"/>
+              <path class="wn nof draw" pathLength="1" style="--d:.3s" d="M108 148 C132 148 130 116 150 116"/>
+              <path class="pkt ac loop" pathLength="1" stroke-width="2.5" style="--d:0s" d="M108 48 C132 48 130 84 150 84"/>
+              <path class="pkt ac loop" pathLength="1" stroke-width="2.5" style="--d:-1.3s" d="M108 98 H150"/>
+              <rect class="box ac" x="150" y="70" width="64" height="56" rx="8"/>
+              <text class="t-hi" x="182" y="88" font-size="10" text-anchor="middle">guard</text>
+              <g class="t" font-size="8.5" text-anchor="middle"><text x="182" y="103">org ✓</text><text x="182" y="116">member ✓</text></g>
+              <g class="fade" style="--d:1.2s">
+                <path class="wn nof" stroke-width="1.6" stroke-linecap="round" d="M140 124 l8 8 m0 -8 l-8 8"/>
+                <text class="t-wn" x="128" y="178" font-size="10.5" text-anchor="middle">✕ 403</text>
               </g>
-              <path class="ln-s" d="M310 96 H326 m-5 -4 5 4 -5 4" stroke-width="1.2"/>
-              <g>
-                <path class="box" d="M336 60 H368 L382 74 V132 H336 Z"/>
-                <path class="ln" d="M368 60 V74 H382"/>
-                <g class="t" font-size="8.5"><text x="344" y="92">xlsx</text></g>
-                <path class="ln" d="M344 102 H374 M344 110 H374 M344 118 H366"/>
+              <path class="ln-s draw" pathLength="1" style="--d:.6s" d="M214 98 H242 m-5 -4 5 4 -5 4"/>
+              <path class="pkt ac loop" pathLength="1" stroke-width="2.5" style="--d:-.6s" d="M214 98 H242"/>
+              <path class="box" d="M248 62 V124 A38 8 0 0 0 324 124 V62"/>
+              <ellipse class="box" cx="286" cy="62" rx="38" ry="8"/>
+              <g text-anchor="middle"><text class="t-hi" x="286" y="96" font-size="9.5">tenant data</text><text class="t" x="286" y="110" font-size="8.5">scoped</text></g>
+              <g class="fade" style="--d:1.6s">
+                <rect class="box-bg" x="236" y="146" width="156" height="44" rx="6"/>
+                <text class="t" x="246" y="162" font-size="9">test floor</text>
+                <text class="t-hi" x="246" y="181" font-size="13">12,040</text>
+                <path class="ln-s" stroke-dasharray="3 3" d="M318 184 H384"/>
               </g>
-              <g class="fade" style="--d:2.8s">
-                <rect class="ac-f" x="366" y="122" width="22" height="17" rx="3"/>
-                <path class="nof ac" d="M370.5 122 v-4 a6.5 6.5 0 0 1 13 0 v4" stroke-width="2"/>
-                <circle cx="377" cy="130.5" r="2" fill="var(--on-accent)"/>
-              </g>
-              <text class="t-hi" x="359" y="156" font-size="10" text-anchor="middle">export.xlsx</text>
-              <text class="t" x="200" y="190" font-size="10" text-anchor="middle">export exists ⇔ period approved</text>
+              <path class="ac nof draw" pathLength="1" stroke-width="1.6" style="--d:1.9s" d="M318 182 H334 V175 H350 V168 H366 V161 H384"/>
             </svg>
           </div>
         </article>
