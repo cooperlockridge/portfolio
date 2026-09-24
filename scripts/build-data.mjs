@@ -28,7 +28,7 @@ const availability = {
 
 const numbers = [
   { value: "467", label: "merged PRs, counted from GitHub" },
-  { value: "12,040", label: "tests behind a monotonic CI floor" },
+  { value: "100%", label: "loan reconciliation across 108 production loans" },
   { value: "46", label: "tools on an MCP server he built" },
   { value: "~3 min", label: "PR approval to production" },
 ];

@@ -22,7 +22,7 @@ Numbers I can prove, from production systems:
 | Number | What it counts |
 | --- | --- |
 | 467 | merged PRs, counted live from GitHub |
-| 12,040 | tests behind a monotonic CI floor |
+| 100% | loan reconciliation across 108 production loans |
 | 46 | tools on an MCP server I built |
 | ~3 min | PR approval to production |
 

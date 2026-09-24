@@ -39,8 +39,8 @@
       "label": "merged PRs, counted from GitHub"
     },
     {
-      "value": "12,040",
-      "label": "tests behind a monotonic CI floor"
+      "value": "100%",
+      "label": "loan reconciliation across 108 production loans"
     },
     {
       "value": "46",
