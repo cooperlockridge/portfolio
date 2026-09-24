@@ -50,9 +50,7 @@ Stages: 20 sweep → 8 verify → fixer → 4 adversarial → 8 verify → fixer
 
 *In production. Next.js 16, TypeScript, Supabase, Clerk, Bun*
 
-Multi-tenant B2B platform for a lender's home-builder partners: forward-commitment pricing, e-signed term sheets, and payment flyers. Realtors, builder staff and internal staff share one identity layer. Largest contributor: 251 of 282 merged PRs.
-
-Tenancy is resolved per request from the route, bound to an auth org, and membership-checked before any data is read. Anything unproven gets a 403. Unknown and real tenants return identical responses, so the tenant list can't be enumerated. Signing runs as an event pipeline: embedded invites, a completion webhook, and a reconciler cron that heals missed callbacks. CI enforces a monotonic test floor, so the build fails if the pass count or file count ever drops. 12,040 tests, and the number only goes up.
+A multi-tenant platform where a lender's home-builder partners price forward commitments and e-sign term sheets. Every request is tenant-checked before it touches data, and CI fails if the test count ever drops. 12,040 tests; I shipped 251 of its 282 merged PRs.
 
 ### Personal Finance Dashboard
 
